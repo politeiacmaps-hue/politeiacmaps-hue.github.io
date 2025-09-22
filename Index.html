@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Politeia CMAPS</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background: #2c3e50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.2em;
+    }
+    header p {
+      margin: 5px 0 0;
+    }
+    section {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .map-container {
+      margin: 20px 0;
+      text-align: center;
+    }
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .cta {
+      display: block;
+      width: max-content;
+      margin: 30px auto;
+      padding: 12px 25px;
+      background: #e74c3c;
+      color: white;
+      font-size: 1.1em;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+    .cta:hover {
+      background: #c0392b;
+    }
+    footer {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Politeia CMAPS</h1>
+    <p>Cartografía ciudadana para una democracia informada</p>
+  </header>
+
+  <section>
+    <h2>Mapa de Abstención Electoral 2024</h2>
+    <p>
+      Explora el porcentaje de abstención en la elección presidencial 2024, sección por sección en Edomex y CDMX.
+      Esta es solo una muestra pública. En nuestras demos privadas mostramos también ganadores por coalición,
+      diferencias de votos y cruces con incidencia delictiva.
+    </p>
+
+    <div class="map-container">
+      <iframe src="demo/abstencion2024_demo.html"></iframe>
+    </div>
+
+    <a class="cta" href="mailto:politeiacmaps@gmail.com">Solicitar Demo Privado</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Politeia CMAPS | politeiacmaps@gmail.com</p>
+  </footer>
+</body>
+</html>
