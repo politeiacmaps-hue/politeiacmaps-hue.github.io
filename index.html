@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POLITEIAMAPS: Inteligencia Geográfica Electoral y de Riesgo</title>
+    <style>
+        /* Estilos limpios y profesionales */
+        body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; background-color: #f4f7f9; color: #333; line-height: 1.6; }
+        .header { background-color: #004a7a; color: white; padding: 30px 20px; text-align: center; }
+        .header h1 { margin: 0; font-size: 2.5em; }
+        .header p { margin: 5px 0 0; font-size: 1.2em; font-weight: 300; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+        .section { background-color: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); margin-bottom: 30px; }
+        .map-wrapper { border: 2px solid #004a7a; border-radius: 6px; overflow: hidden; margin-top: 15px; }
+        iframe { display: block; }
+        h2 { color: #004a7a; border-bottom: 2px solid #00a6ff; padding-bottom: 5px; margin-top: 0; }
+        .cta-box { background-color: #fff7e6; padding: 25px; border: 1px solid #ffebc6; border-radius: 8px; text-align: center; margin-top: 25px; }
+        .cta-button { background-color: #ff6600; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block; margin-top: 15px; font-size: 1.1em; transition: background-color 0.3s; }
+        .cta-button:hover { background-color: #cc5200; }
+        ul { list-style-type: none; padding: 0; }
+        ul li { background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="%2300A6FF" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>') no-repeat left center; padding-left: 25px; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>POLITEIAMAPS</h1>
+        <p>Inteligencia Geográfica para Estrategia: Votaciones, Riesgo y Mercado.</p>
+    </div>
+
+    <div class="container">
+        
+        <div class="section">
+            <h2>🔎 ¿CUÁNTA GENTE NO VOTÓ EN TU SECCIÓN?</h2>
+            <p>Este mapa es una herramienta de conciencia social. Utiliza el buscador para localizar tu colonia, tu calle o tu sección electoral y **descubre el porcentaje de Abstencionismo** en las últimas elecciones.</p>
+            
+            <div class="map-wrapper">
+                <iframe 
+                    src="https://qgiscloud.com/PoliteiaCmaps/QgisWeb_modificado/" 
+                    width="100%" 
+                    height="550px" 
+                    frameborder="0" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p style="font-size: 0.9em; text-align: center; margin-top: 10px;">*Este es solo un mapa demo con datos de abstencionismo. La información completa está disponible para análisis estratégicos.*</p>
+        </div>
+
+        <div class="section" style="background-color: #e6f7ff;">
+            <h2>📈 LLEVA TU ESTRATEGIA AL SIGUIENTE NIVEL CON NUESTROS DATOS</h2>
+            <p style="font-size: 1.1em; font-weight: bold;">Nuestro activo más valioso es la profundidad del análisis. Tenemos 20+ años de historia electoral y cruces de datos que te dan una ventaja decisiva en **CDMX, Edomex, Q. Roo, Yucatán, Qro. y Gto.**</p>
+
+            <h3>Nuestra Base de Datos Incluye:</h3>
+            <ul>
+                <li>Histórico de Votación por Sección Electoral: **2002 a 2024** (Diputados, Senadores, Alcaldes, Presidenciales).</li>
+                <li>Datos de **Homicidios y Seguridad** georreferenciados (Por Capa de Polígono, No Puntos Crudos).</li>
+                <li>**Atributos Completos** de Votos por Partido/Coalición, Candidato Ganador y Abastecimiento total (Más de 50 columnas por capa).</li>
+                <li>Cartografía de Límites por Sección Electoral, Municipio, y Regiones Propias.</li>
+            </ul>
+
+            <h3 style="margin-top: 25px;">Análisis a la Medida para:</h3>
+            
+            <p>✅ **Partidos/Candidatos:** Identificación de Secciones 'Dormidas', Optimización de Rutas de Campaña, Proyección de Resultados.</p>
+            <p>✅ **ONGs y Gobierno:** Focalización de Programas Sociales, Evaluación de Patrones de Riesgo y Vulnerabilidad.</p>
+            <p>✅ **Bienes Raíces/Empresas:** Estudios de Mercado Geográfico (Riesgo vs. Potencial de Compra) basados en el comportamiento sociopolítico.</p>
+        </div>
+
+        <div class="cta-box">
+            <h3>¡ACTÚA AHORA! Ya no te queda tiempo.</h3>
+            <p style="font-size: 1.2em;">El tiempo corre en la planeación. **Este demo es solo la punta del iceberg.** Contáctanos hoy para una **Demostración Privada** de la base de datos completa y cotiza tu análisis.</p>
+            
+            <a href="mailto:politeiacmpas@gmail.com" class="cta-button">SOLICITAR DEMOSTRACIÓN PRIVADA</a>
+            <p style="margin-top: 10px; font-size: 0.9em;">**Contacto Directo:** **politeiacmaps@gmail.com** (Ej: ventas@politeiamaps.com)</p>
+        </div>
+
+    </div>
+</body>
+</html>
