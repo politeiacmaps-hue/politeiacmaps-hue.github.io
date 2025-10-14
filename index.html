@@ -18,6 +18,7 @@
         .cta-box { background-color: #fff7e6; padding: 25px; border: 1px solid #ffebc6; border-radius: 8px; text-align: center; margin-top: 25px; }
         .cta-button { background-color: #ff6600; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block; margin-top: 15px; font-size: 1.1em; transition: background-color 0.3s; }
         .cta-button:hover { background-color: #cc5200; }
+        /* Estilo de lista de cotejo (usando checkmark SVG) */
         ul { list-style-type: none; padding: 0; }
         ul li { background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="%2300A6FF" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>') no-repeat left center; padding-left: 25px; margin-bottom: 10px; }
     </style>
@@ -35,11 +36,18 @@
             <h2>🔎 MAPA DEMO: ABSTENCIONISMO Y RIESGO EN TU COLONIA</h2>
             <p>Este mapa interactivo es una herramienta de conciencia social que combina dos análisis clave. Para explorar:</p>
 
-            <ul style="list-style-type: disc; margin-left: 20px; padding-left: 0;">
-                <li>BUSCA y NAVEGA: Utiliza el campo de búsqueda ("Search for locations...") para encontrar tu municipio o colonia.</li>
-                <li>DATOS ESPECÍFICOS: busca tú municipio: Localízalo en el mapa y tócalo para consultar el número total de delitos registrados. Identifica tu colonia, continúa acercandote (Zoom) hasta tu colonia y calle. Al hacer zoom, aparecerá automaticamente tu sección electoral. consulta la información, toca cualquier sección electoral para obtener los datos detallados.</li>
-                <li>LEYENDA Y CAPAS: Usa el icono de menú **"Map & Tools"** (arriba a la derecha del mapa) para:
-                    <ul style="margin-top: 5px;">
+            <ul style="list-style-type: none; margin-left: 0; padding-left: 0;">
+                <li>**BUSCA y NAVEGA:** Utiliza el campo de búsqueda ("Search for locations...") para encontrar tu municipio o colonia.</li>
+                <li>
+                    **DATOS ESPECÍFICOS (Delito y Electoral):**
+                    <ul style="margin-top: 5px; margin-left: -20px;">
+                        <li>Localiza tu municipio en el mapa y tócalo para consultar el número total de delitos registrados.</li>
+                        <li>Continúa **acercándote (Zoom)** hasta tu colonia y calle. Al hacer zoom, **aparecerá automáticamente** tu sección electoral.</li>
+                        <li>**Toca** cualquier sección electoral para obtener los datos detallados.</li>
+                    </ul>
+                </li>
+                <li>**LEYENDA Y CAPAS:** Usa el icono de menú **"Map & Tools"** (arriba a la derecha del mapa) para:
+                    <ul style="margin-top: 5px; margin-left: -20px;">
                         <li>Ver la Leyenda: Entender el significado de los colores y las líneas.</li>
                         <li>Prender/Apagar Capas: Controlar si ves solo el Abstencionismo o la capa de Delitos.</li>
                     </ul>
@@ -64,14 +72,14 @@
 
         <div class="section" style="background-color: #e6f7ff;">
             <h2>📈 LLEVA TU ESTRATEGIA AL SIGUIENTE NIVEL CON NUESTROS DATOS</h2>
-            <p style="font-size: 1.1em; font-weight: bold;">Nuestro activo más valioso es la profundidad del análisis. Tenemos 20+ años de historia electoral y cruces de datos que te dan una ventaja decisiva en CDMX, Edomex, Q. Roo, Yucatán, Qro. y Gto.</p>
+            <p style="font-size: 1.1em; font-weight: bold;">Nuestro activo más valioso es la profundidad del análisis. Tenemos más de 20 años de historia electoral y cruces de datos que te dan una ventaja decisiva en CDMX, Edomex, Q. Roo, Yucatán, Qro. y Gto.</p>
 
             <h3>Nuestra Base de Datos Incluye:</h3>
             <ul>
-                <li>Histórico de Votación por Sección Electoral: **2002 a 2024** (Diputados, Senadores, Alcaldes, Presidenciales).</li>
+                <li>Histórico de Votación por Sección Electoral: **2002-2024** (Diputados, Senadores, Alcaldes, Presidenciales).</li>
                 <li>Datos de **Homicidios y Seguridad** georreferenciados (Por Capa de Polígono, No Puntos Crudos).</li>
-                <li>Atributos Completos de Votos por Partido/Coalición, Candidato Ganador y Abastecimiento total (Más de 20 columnas por capa).</li>
-                <li>Cartografía de Límites por Sección Electoral, Municipio, y Regiones Propias.</li>
+                <li>Atributos Completos de Votos por Partido/Coalición, Candidato Ganador y **Abstención** total (Más de 20 columnas por capa).</li>
+                <li>Cartografía de Límites por Sección Electoral, Municipio y Regiones Propias.</li>
             </ul>
 
             <h3 style="margin-top: 25px;">Análisis a la Medida para:</h3>
@@ -82,11 +90,11 @@
         </div>
 
         <div class="cta-box">
-            <h3>¡ACTÚA AHORA! Ya no te queda tiempo</h3>
-            <p style="font-size: 1.2em;">El tiempo corre en la planeación. Este demo es solo la punta del iceberg. Contáctanos hoy para una Demostración en línea de la base de datos completa y cotiza tu análisis.</p>
+            <h3>¡ACTÚA AHORA! Ya no queda tiempo</h3>
+            <p style="font-size: 1.2em;">El tiempo corre en la planeación. Este demo es solo la punta del iceberg. Contáctanos hoy para una demostración en línea de la base de datos completa y cotiza tu análisis.</p>
             
             <a href="mailto:politeiacmaps@gmail.com" class="cta-button">SOLICITAR DEMOSTRACIÓN EN LÍNEA</a>
-            <p style="margin-top: 10px; font-size: 0.9em;">  Contacto Directo: politeiacmaps@gmail.com</p>
+            <p style="margin-top: 10px; font-size: 0.9em;"> Contacto Directo: politeiacmaps@gmail.com</p>
         </div>
 
     </div>
