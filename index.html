@@ -3,100 +3,267 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>POLITEIA CMAPS: Inteligencia Geográfica Electoral y de Riesgo</title>
+    <title>POLITEIA CMAPS: El Territorio que Define | Redefine el Enfoque</title>
+    <meta name="description" content="Inteligencia territorial ciudadana que cruza abstencionismo, riesgo social y seguridad. El mapa que revela dónde se gana, se pierde y se reconstruye la confianza.">
+    
     <style>
-        /* Estilos limpios y profesionales */
-        body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; background-color: #f4f7f9; color: #333; line-height: 1.6; }
-        .header { background-color: #004a7a; color: white; padding: 30px 20px; text-align: center; }
-        .header h1 { margin: 0; font-size: 2.5em; }
-        .header p { margin: 5px 0 0; font-size: 1.2em; font-weight: 300; }
-        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
-        .section { background-color: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); margin-bottom: 30px; }
-        .map-wrapper { border: 2px solid #004a7a; border-radius: 6px; overflow: hidden; margin-top: 15px; }
-        iframe { display: block; }
-        h2 { color: #004a7a; border-bottom: 2px solid #00a6ff; padding-bottom: 5px; margin-top: 0; }
-        .cta-box { background-color: #fff7e6; padding: 25px; border: 1px solid #ffebc6; border-radius: 8px; text-align: center; margin-top: 25px; }
-        .cta-button { background-color: #ff6600; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block; margin-top: 15px; font-size: 1.1em; transition: background-color 0.3s; }
-        .cta-button:hover { background-color: #cc5200; }
-        /* Estilo de lista de cotejo (usando checkmark SVG) */
+        /* BASE & RESET: Fondo oscuro para alto impacto y seriedad */
+        body { 
+            font-family: 'Arial', sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background-color: #000000; /* Fondo Negro Sólido */
+            color: #FFFFFF;
+            line-height: 1.6;
+            text-align: center; 
+        }
+
+        /* TIPOGRAFÍA & ESTRUCTURA */
+        .header { 
+            background-color: #0A1931; /* Azul Muy Oscuro (casi negro) para la sección principal */
+            color: white; 
+            padding: 50px 20px; 
+            text-align: center; 
+            border-bottom: 3px solid #00FFFF; /* Línea Cian de Alto Voltaje */
+        }
+        .header h1 { 
+            margin: 0; 
+            font-size: 3rem; /* Grande y agresivo */
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .header p { 
+            margin: 10px 0 0; 
+            font-size: 1.5rem; 
+            font-weight: 300; 
+            color: #FFD700; /* Dorado para destacar la urgencia */
+        }
+        .container { 
+            max-width: 1100px; 
+            margin: 0 auto; 
+            padding: 30px 20px; 
+        }
+        
+        /* SECCIONES */
+        .section { 
+            background-color: #1a1a1a; /* Gris muy oscuro para contraste con el fondo */
+            padding: 40px; 
+            border-radius: 8px; 
+            margin-bottom: 30px; 
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.1); /* Sutil brillo cian */
+            text-align: left;
+        }
+        h2 { 
+            color: #00FFFF; /* Cian, color de la inteligencia y modernidad */
+            border-bottom: 2px solid #FF4500; /* Rojo/Naranja para contraste */
+            padding-bottom: 10px; 
+            margin-top: 0; 
+            font-size: 2em;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        h3 {
+            color: #FFFFFF;
+            margin-top: 25px;
+            font-size: 1.3em;
+        }
+
+        /* MANIFIESTO DE VALOR */
+        .manifiesto {
+            background-color: #000000; 
+            padding: 30px 20px;
+            border-bottom: 3px solid #FF4500;
+            text-align: center;
+        }
+        .manifiesto h2 {
+            color: #FF4500; /* Título rojo/naranja para el Manifiesto */
+        }
+        .manifiesto p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 20px auto;
+            font-weight: bold;
+        }
+
+        /* MAPA Y NOTA AMABLE */
+        .map-wrapper { 
+            border: 5px solid #00FFFF; 
+            border-radius: 6px; 
+            overflow: hidden; 
+            margin-top: 20px; 
+        }
+        .map-frame {
+            width: 100%; 
+            height: 650px; /* Mayor altura para más inmersión */
+            border: none;
+            display: block;
+        }
+        .friendly-note {
+            background-color: #0A1931;
+            color: #999999;
+            padding: 15px;
+            font-size: 0.9rem;
+            margin: 0;
+            text-align: center;
+        }
+        
+        /* CTA Y BOTÓN DE URGENCIA */
+        .cta-box { 
+            background-color: #FF4500; /* Rojo/Naranja para máxima urgencia */
+            padding: 30px; 
+            border-radius: 8px; 
+            text-align: center; 
+            margin-top: 30px; 
+            color: white;
+            box-shadow: 0 0 20px rgba(255, 69, 0, 0.8);
+        }
+        .cta-box h3 {
+            color: white;
+        }
+        .cta-button { 
+            background-color: #00FFFF; /* Cian sobre Naranja para un contraste brutal */
+            color: #000000;
+            padding: 15px 35px; 
+            text-decoration: none; 
+            border-radius: 50px; /* Borde redondeado, más moderno */
+            font-weight: bold; 
+            display: inline-block; 
+            margin-top: 20px; 
+            font-size: 1.3em; 
+            transition: background-color 0.3s, transform 0.2s; 
+        }
+        .cta-button:hover { 
+            background-color: #FFFFFF; 
+            transform: scale(1.05);
+        }
+        
+        /* LISTAS DE COTEJO */
         ul { list-style-type: none; padding: 0; }
-        ul li { background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="%2300A6FF" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>') no-repeat left center; padding-left: 25px; margin-bottom: 10px; }
+        ul li { 
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="%2300FFFF" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>') no-repeat left center; 
+            padding-left: 25px; 
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        /* FOOTER */
+        .footer {
+            background-color: #0A1931;
+            padding: 20px;
+            color: #999;
+            font-size: 0.9em;
+        }
+        .footer a {
+            color: #00FFFF;
+            text-decoration: none;
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            .header p {
+                font-size: 1.2rem;
+            }
+            .map-frame {
+                height: 450px;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <h1>POLITEIA CMAPS</h1>
-        <p>Inteligencia Geográfica para Estrategia: Votaciones, Riesgo y Mercado.</p>
-    </div>
+    <header class="header">
+        <h1>NO VENDEMOS DATOS. VENDEMOS ENTENDIMIENTO.</h1>
+        <p>TE DAMOS INTELIGENCIA PARA DECIDIR, PLANEAR Y ACTUAR.</p>
+        <h2 style="color: #00FFFF; margin-top: 30px; font-size: 2.5rem; border: none;">NO VEAS EL PROBLEMA, REDEFINE EL ENFOQUE.</h2>
+    </header>
 
     <div class="container">
         
-        <div class="section">
-            <h2>🔎 MAPA DEMO: ABSTENCIONISMO Y RIESGO EN TU COLONIA</h2>
-            <p>Este mapa interactivo es una herramienta de conciencia social que combina dos análisis clave. Para explorar:</p>
+        <div class="manifiesto">
+            <h2>EL VERDADERO PARTIDO POR GANAR</h2>
+            <p style="font-style: italic;">"El abstencionismo es el partido más grande de México".</p>
+            <p>CMAPS revela el **TERRITORIO DE LOS NO REPRESENTADOS**: Millones de ciudadanos desencantados, listos para involucrarse si la propuesta es real y llega a su calle.</p>
+        </div>
 
-            <ul style="list-style-type: none; margin-left: 0; padding-left: 0;">
-                <li>**BUSCA y NAVEGA:** Utiliza el campo de búsqueda ("Search for locations...") para encontrar tu municipio o colonia.</li>
-                <li>
-                    **DATOS ESPECÍFICOS (Delito y Electoral):**
-                    <ul style="margin-top: 5px; margin-left: -20px;">
-                        <li>Localiza tu municipio en el mapa y tócalo para consultar el número total de delitos registrados.</li>
-                        <li>Continúa **acercándote (Zoom)** hasta tu colonia y calle. Al hacer zoom, **aparecerá automáticamente** tu sección electoral.</li>
-                        <li>**Toca** cualquier sección electoral para obtener los datos detallados.</li>
-                    </ul>
-                </li>
-                <li>**LEYENDA Y CAPAS:** Usa el icono de menú **"Map & Tools"** (arriba a la derecha del mapa) para:
-                    <ul style="margin-top: 5px; margin-left: -20px;">
-                        <li>Ver la Leyenda: Para entender el significado de los colores y las líneas.</li>
-                        <li>Prender/Apagar Capas: Controlar si ves solo el Abstencionismo o la capa de Delitos.</li>
-                    </ul>
-                </li>
-            </ul>
-
-            <h3 style="margin-top: 20px; color: #cc3300;">CLAVE DE ANÁLISIS:</h3>
-            <p>🔴 Los MAPAS ROJOS representan el **Índice Delictivo Municipal** (mientras más rojo, más delitos hubo).</p>
-            <p>🔵 Las ÁREAS AZULES representan la capa de **Sección Electoral** (mientras más azul, mayor es el número de abstención en la sección electoral).</p>
+        <div class="section" id="mapa">
+            <h2>🔎 LA PRUEBA INNEGABLE DE LA CONSECUENCIA: EXPLORA EL MAPA DEMO</h2>
             
+            <p>Este mapa interactivo revela la correlación directa entre el **abstencionismo electoral** y los **índices de delito**. Un negocio se pierde, o una elección se define, por una sola calle.</p>
+
+            <h3 style="color: #FF4500; text-align: center;">CLAVE DE ANÁLISIS:</h3>
+            <p style="text-align: center;">🔴 **MAPAS ROJOS:** Máxima Incidencia Delictiva (La Consecuencia).</p>
+            <p style="text-align: center;">🔵 **ÁREAS AZULES:** Alta Abstención Electoral (La Causa del Quiebre).</p>
+            
+            <p class="friendly-note">
+                **NOTA AMABLE:** Dado que el mapa carga capas de datos complejas (más de 20 atributos por sección), el despliegue puede tardar unos segundos dependiendo de tu velocidad de conexión. ¡La realidad no es ligera! Te agradecemos tu paciencia.
+            </p>
+
             <div class="map-wrapper">
                 <iframe 
+                    class="map-frame"
                     src="https://qgiscloud.com/PoliteiaCmaps/QgisWeb_modificado/" 
-                    width="100%" 
-                    height="550px" 
-                    frameborder="0" 
+                    title="Mapa de Inteligencia Territorial CMAPS"
                     allowfullscreen>
                 </iframe>
             </div>
-            <p style="font-size: 0.9em; text-align: center; margin-top: 10px;">*Este es solo un mapa demo con datos de abstencionismo. La información completa está disponible para análisis estratégicos.*</p>
+            
+            <h3 style="text-align: center;">INSTRUCCIONES SIMPLIFICADAS PARA LA URGENCIA:</h3>
+            <div style="max-width: 600px; margin: 20px auto;">
+                <ul>
+                    <li>**NAVEGA Y HAZ ZOOM:** Acércate a tu colonia o municipio para ver el detalle por **Sección Electoral** (el polígono azul).</li>
+                    <li>**TOCA EL MAPA:** Toca una sección para ver los datos de abstención, partido ganador y el índice de delito asociado.</li>
+                    <li>**LEYENDA/CAPAS:** Usa el menú "Map & Tools" dentro del mapa para activar/desactivar las capas de delito y abstención.</li>
+                </ul>
+            </div>
         </div>
 
-        <div class="section" style="background-color: #e6f7ff;">
-            <h2>📈 LLEVA TU ESTRATEGIA AL SIGUIENTE NIVEL CON NUESTROS DATOS</h2>
-            <p style="font-size: 1.1em; font-weight: bold;">Nuestro activo más valioso es la profundidad del análisis. Tenemos más de 20 años de historia electoral y cruces de datos que te dan una ventaja decisiva en CDMX, Edomex, Q. Roo, Yucatán, Qro. y Gto.</p>
-
-            <h3>Nuestra Base de Datos Incluye:</h3>
-            <ul>
-                <li>Histórico de Votación por Sección Electoral: **2002-2024** (Diputados, Senadores, Alcaldes, Presidenciales).</li>
-                <li>Datos de **Homicidios y Seguridad** georreferenciados (Por Capa de Polígono, No Puntos Crudos).</li>
-                <li>Atributos Completos de Votos por Partido/Coalición, Candidato Ganador y **Abstención** total (Más de 20 columnas por capa).</li>
-                <li>Cartografía de Límites por Sección Electoral, Municipio y Regiones Propias.</li>
-            </ul>
-
-            <h3 style="margin-top: 25px;">Análisis a la Medida para:</h3>
+        <div class="section" style="background-color: #0A1931;">
+            <h2>RESULTADOS ESTRATÉGICOS ESPERADOS</h2>
+            <p style="font-style: italic; text-align: center; color: #999;">"Donde el ciudadano vuelve a involucrarse, vuelve la seguridad, la inversión y la esperanza".</p>
             
-            <p>✅ Partidos/Candidatos: Identificación de Secciones 'Dormidas', Optimización de Rutas de Campaña, Proyección de Resultados.</p>
-            <p>✅ ONGs y Gobierno: Focalización de Programas Sociales, Evaluación de Patrones de Riesgo y Vulnerabilidad.</p>
-            <p>✅ Bienes Raíces/Empresas: Estudios de Mercado Geográfico (Riesgo vs. Potencial de Compra) basados en el comportamiento sociopolítico.</p>
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-around; margin-top: 30px;">
+                <div style="width: 45%; min-width: 300px; margin-bottom: 20px;">
+                    <h3>PARA GOBIERNO/PARTIDOS</h3>
+                    <ul>
+                        <li>Incremento de la **Gobernabilidad** y **Confianza Ciudadana**.</li>
+                        <li>Identifica zonas donde la gente dejó de confiar para aplicar **Políticas Públicas Focalizadas**.</li>
+                        <li>Planificación de campañas y gestión basada en **territorio, no en discurso**.</li>
+                    </ul>
+                </div>
+                <div style="width: 45%; min-width: 300px; margin-bottom: 20px;">
+                    <h3>PARA EMPRESARIOS/INVERSIONISTAS</h3>
+                    <ul>
+                        <li>Mejores decisiones de **Inversión Inteligente y Segura**.</li>
+                        <li>Conoce las **áreas seguras para invertir**.</li>
+                        <li>Cruza datos de seguridad, movilidad y consumo para **mitigar riesgos**.</li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
         <div class="cta-box">
-            <h3>¡ACTÚA AHORA! Ya no queda tiempo</h3>
-            <p style="font-size: 1.2em;">El tiempo corre en la planeación. Este demo es solo la punta del iceberg. Contáctanos hoy para una demostración en línea de la base de datos completa y cotiza tu análisis.</p>
+            <h3>¡ACTÚA AHORA! AGENDA TU SESIÓN ESTRATÉGICA</h3>
+            <p style="font-size: 1.3em;">Si eres líder, empresario o autoridad, hablemos de cómo mapear contigo. Este demo es solo la punta del iceberg.</p>
             
-            <a href="mailto:politeiacmaps@gmail.com" class="cta-button">SOLICITAR DEMOSTRACIÓN EN LÍNEA</a>
-            <p style="margin-top: 10px; font-size: 0.9em;"> Contacto Directo: politeiacmaps@gmail.com</p>
+            <a href="mailto:politeiacmaps@gmail.com" class="cta-button">
+                SOLICITAR SESIÓN ESTRATÉGICA
+            </a>
+            
+            <p style="margin-top: 20px; font-size: 1em;">
+                Contacto Directo: <a href="mailto:politeiacmaps@gmail.com" style="color: black; font-weight: bold;">politeiacmaps@gmail.com</a> | Tel: <a href="tel:5589342136" style="color: black; font-weight: bold;">5589342136</a>
+            </p>
         </div>
 
     </div>
+    
+    <footer class="footer">
+        <p style="margin: 5px 0; font-weight: bold; color: white;">POLITEIA CMAPS. LA INTELIGENCIA DEL CIUDADANO.</p>
+        <p style="margin: 5px 0;">Información para entender. Mapas para decidir.</p>
+    </footer>
+
 </body>
 </html>
