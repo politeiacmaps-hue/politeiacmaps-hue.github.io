@@ -69,6 +69,13 @@
             font-size: 1.3em;
         }
 
+        /* LOGO */
+        .logo {
+            max-width: 180px; /* Tamaño adecuado para tu logo (un poco más grande que antes) */
+            height: auto;
+            margin-bottom: 20px; 
+        }
+
         /* MANIFIESTO DE VALOR */
         .manifiesto {
             background-color: #000000; 
@@ -95,7 +102,7 @@
         }
         .map-frame {
             width: 100%; 
-            height: 650px; /* Mayor altura para más inmersión */
+            height: 650px; 
             border: none;
             display: block;
         }
@@ -126,7 +133,7 @@
             color: #000000;
             padding: 15px 35px; 
             text-decoration: none; 
-            border-radius: 50px; /* Borde redondeado, más moderno */
+            border-radius: 50px; 
             font-weight: bold; 
             display: inline-block; 
             margin-top: 20px; 
@@ -170,14 +177,20 @@
             .map-frame {
                 height: 450px;
             }
+            .logo {
+                max-width: 120px;
+            }
         }
     </style>
 </head>
 <body>
 
     <header class="header">
+        <img src="logo1.png" alt="Logo Politeia CMAPS" class="logo">
+        
         <h1>NO VENDEMOS DATOS. VENDEMOS ENTENDIMIENTO.</h1>
         <p>TE DAMOS INTELIGENCIA PARA DECIDIR, PLANEAR Y ACTUAR.</p>
+        
         <h2 style="color: #00FFFF; margin-top: 30px; font-size: 2.5rem; border: none;">NO VEAS EL PROBLEMA, REDEFINE EL ENFOQUE.</h2>
     </header>
 
@@ -192,14 +205,14 @@
         <div class="section" id="mapa">
             <h2>🔎 LA PRUEBA INNEGABLE DE LA CONSECUENCIA: EXPLORA EL MAPA DEMO</h2>
             
-            <p>Este mapa interactivo revela la correlación directa entre el **abstencionismo electoral** y los **índices de delito**. Un negocio se pierde, o una elección se define, por una sola calle.</p>
+            <p>El territorio que define: **A veces una elección se define por una colonia; a veces un negocio se pierde por una calle**. Hemos observado municipios donde el **60% de abstención** los hace hoy los más inseguros. Los mapas no mienten.</p>
 
-            <h3 style="color: #FF4500; text-align: center;">CLAVE DE ANÁLISIS:</h3>
+            <h3 style="color: #FF4500; text-align: center;">CLAVE DE ANÁLISIS RÁPIDO:</h3>
             <p style="text-align: center;">🔴 **MAPAS ROJOS:** Máxima Incidencia Delictiva (La Consecuencia).</p>
             <p style="text-align: center;">🔵 **ÁREAS AZULES:** Alta Abstención Electoral (La Causa del Quiebre).</p>
             
             <p class="friendly-note">
-                **NOTA AMABLE:** Dado que el mapa carga capas de datos complejas, el despliegue puede tardar unos segundos dependiendo de tu velocidad de conexión. ¡La realidad no es ligera! Te agradecemos tu paciencia.
+                **NOTA AMABLE:** Dado que el mapa carga capas de datos complejas (más de 20 atributos por sección), el despliegue puede tardar unos segundos dependiendo de tu velocidad de conexión. ¡La realidad no es ligera! Te agradecemos tu paciencia.
             </p>
 
             <div class="map-wrapper">
@@ -211,12 +224,12 @@
                 </iframe>
             </div>
             
-            <h3 style="text-align: center;">INSTRUCCIONES SIMPLIFICADAS PARA TI:</h3>
+            <h3 style="text-align: center;">INSTRUCCIONES SIMPLIFICADAS:</h3>
             <div style="max-width: 600px; margin: 20px auto;">
                 <ul>
-                    <li>**NAVEGA Y HAZ ZOOM:** Acércate a tu colonia o municipio para ver el detalle por **Sección Electoral** (el polígono azul).</li>
-                    <li>**TOCA EL MAPA:** Toca una sección para ver los datos de abstención, partido ganador y el índice de delito asociado.</li>
-                    <li>**LEYENDA/CAPAS:** Usa el menú "Map & Tools" dentro del mapa para activar/desactivar las capas de delito y abstención.</li>
+                    <li>**EXPLORA TU MUNICIPIO:** Usa el zoom o el buscador dentro del mapa.</li>
+                    <li>**TOCA EL MAPA:** Toca una sección electoral (polígono azul) para ver los datos de abstención e índice de delito.</li>
+                    <li>**ACTÚA DONDE IMPORTA:** Los datos te mostrarán dónde está el voto perdido y el riesgo social.</li>
                 </ul>
             </div>
         </div>
@@ -230,16 +243,16 @@
                     <h3>PARA GOBIERNO/PARTIDOS</h3>
                     <ul>
                         <li>Incremento de la **Gobernabilidad** y **Confianza Ciudadana**.</li>
-                        <li>Identifica zonas donde la gente dejó de confiar para aplicar **Políticas Públicas Focalizadas**.</li>
-                        <li>Planificación de campañas y gestión basada en **territorio, no en discurso**.</li>
+                        <li>**Políticas Públicas Focalizadas**.</li>
+                        <li>Planea políticas **basadas en territorio**, no en discurso.</li>
                     </ul>
                 </div>
                 <div style="width: 45%; min-width: 300px; margin-bottom: 20px;">
                     <h3>PARA EMPRESARIOS/INVERSIONISTAS</h3>
                     <ul>
-                        <li>Mejores decisiones de **Inversión Inteligente y Segura**.</li>
+                        <li>**Inversiones Inteligentes y Seguras**.</li>
+                        <li>Mejores decisiones de inversión.</li>
                         <li>Conoce las **áreas seguras para invertir**.</li>
-                        <li>Cruza datos de seguridad, movilidad y consumo para **mitigar riesgos**.</li>
                     </ul>
                 </div>
             </div>
