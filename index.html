@@ -5,30 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>POLITEIA CMAPS: El Territorio que Define | Redefine el Enfoque</title>
     <meta name="description" content="Inteligencia territorial ciudadana que cruza abstencionismo, riesgo social y seguridad. El mapa que revela dónde se gana, se pierde y se reconstruye la confianza.">
+    <link rel="stylesheet" href="style.css"> 
     
     <style>
-        /* BASE & RESET: Fondo oscuro para alto impacto y seriedad */
+        /* ESTILOS INTERNOS (Para garantizar que se vean bien en cualquier parte) */
         body { 
             font-family: 'Arial', sans-serif; 
             margin: 0; 
             padding: 0; 
-            background-color: #000000; /* Fondo Negro Sólido */
+            background-color: #000000;
             color: #FFFFFF;
             line-height: 1.6;
             text-align: center; 
         }
 
-        /* TIPOGRAFÍA & ESTRUCTURA */
         .header { 
-            background-color: #0A1931; /* Azul Muy Oscuro (casi negro) para la sección principal */
+            background-color: #0A1931; 
             color: white; 
             padding: 50px 20px; 
             text-align: center; 
-            border-bottom: 3px solid #00FFFF; /* Línea Cian de Alto Voltaje */
+            border-bottom: 3px solid #00FFFF;
         }
         .header h1 { 
             margin: 0; 
-            font-size: 3rem; /* Grande y agresivo */
+            font-size: 3rem; 
             font-weight: 900;
             letter-spacing: 2px;
         }
@@ -43,17 +43,37 @@
             margin: 0 auto;
             padding: 20px;
         }
-
-        /* ESTILO DEL LOGO */
-        .logo-container {
-            margin-bottom: 20px;
+        .section {
+            margin: 40px 0;
+            padding: 20px 0;
         }
-        .logo-container img {
-            max-width: 250px;
-            height: auto;
+        .map-button {
+            display: inline-block;
+            background-color: #FF4500; /* Naranja/Rojo de acción */
+            color: #FFFFFF;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            font-size: 1.4em;
+            transition: background-color 0.3s;
         }
-
-        /* SECCIONES Y LISTAS */
+        .map-button:hover {
+            background-color: #009900; /* Verde de la esperanza */
+        }
+        .map-wrapper {
+            margin-top: 30px;
+            overflow: hidden;
+            /* El borde llamativo para la estrategia de venta */
+            border: 5px solid #FF4500; 
+        }
+        .friendly-note {
+            font-style: italic;
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #888;
+        }
+        /* Estilos de las secciones de pitch */
         .section-title {
             color: #00FFFF;
             font-size: 2.2em;
@@ -90,8 +110,6 @@
             width: 1em;
             margin-left: -1em;
         }
-
-        /* CALL TO ACTION (CTA) */
         .cta-box {
             background-color: #0A1931;
             padding: 30px;
@@ -104,60 +122,12 @@
             font-size: 2em;
             margin-bottom: 15px;
         }
-        .cta-button {
-            display: inline-block;
-            background-color: #00FFFF;
-            color: #000000;
-            padding: 15px 30px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            font-size: 1.4em;
-            transition: background-color 0.3s;
-        }
-        .cta-button:hover {
-            background-color: #FFFFFF;
-            color: #000000;
-        }
-
-        /* EXCLUSIVITY PITCH (NUEVO BLOQUE DE VENTA) */
-        .exclusivity-pitch {
-            padding: 20px; 
-            background-color: #0A1931; 
-            margin-top: 10px;
-            border: 2px solid #00FFFF;
-        }
-        .exclusivity-pitch h3 {
-            color: #00FFFF;
-            font-size: 1.8em;
-            margin-bottom: 15px;
-        }
-        .exclusivity-pitch p {
-            color: white;
-            font-size: 1.2em;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        /* FOOTER */
-        .footer {
-            background-color: #111;
-            padding: 20px 0;
-            color: #aaa;
-            font-size: 0.9em;
-        }
         
         /* MEDIA QUERIES para adaptabilidad */
         @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2.2rem;
-            }
-            .header p {
-                font-size: 1.2rem;
-            }
-            .section-title {
-                font-size: 1.8em;
-            }
+            .header h1 { font-size: 2.2rem; }
+            .header p { font-size: 1.2rem; }
+            .section-title { font-size: 1.8em; }
         }
     </style>
 </head>
@@ -165,31 +135,46 @@
 
     <div class="container">
         <div class="header">
-            <div class="logo-container">
-                <h2 style="color: #00FFFF; font-size: 2.5em; margin: 0;">POLITEIA CMAPS</h2>
-            </div>
+            <h2 style="color: #00FFFF; font-size: 2.5em; margin: 0;">POLITEIA CMAPS</h2>
             <h1>EL MAPA QUE REVELA EL PODER TERRITORIAL</h1>
             <p>Inteligencia Ciudadana: Cruzamos Abstencionismo, Riesgo Social y Seguridad para redefinir tu estrategia.</p>
         </div>
 
-        <h2 class="section-title">NUESTRA TESIS DE ALTO IMPACTO</h2>
+        <h2 class="section-title">🔎 LA PRUEBA INNEGABLE DE LA CONSECUENCIA</h2>
 
-        <div class="map-section" style="margin-bottom: 40px;">
-            <img 
-                src="mapa_politeia_demo.png" 
-                alt="Mapa de Inteligencia Territorial Exclusiva - Politeia CMAPS" 
-                style="width: 100%; max-width: 900px; height: auto; margin-top: 30px; border: 4px solid #00FFFF;"
-            >
+        <div class="section" id="mapa">
+            
+            <h3 style="color: #FF4500; text-align: center;">PRUEBA DE CONCEPTO: LA TESIS ES VISUAL.</h3>
+            <p style="text-align: center;">🔴 ÁREAS ROJAS: Máxima Incidencia Delictiva (La Consecuencia).</p>
+            <p style="text-align: center;">🔵 ÁREAS AZULES: Alta Abstención Electoral (La Causa del Quiebre).</p>
+            
+            <div style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
+                 <a href="mailto:politeiacmaps@gmail.com?subject=Solicitud%20de%20Demo%20Interactivo" class="map-button" style="background-color: #009900;">
+                    SOLICITAR DEMO INTERACTIVO PRIVADO
+                </a>
+            </div>
 
-            <div class="exclusivity-pitch">
-                <h3>LA INTELIGENCIA TERRITORIAL NO ES PÚBLICA. ES EXCLUSIVA.</h3>
-                <p>
-                    Lo que ves es solo la **tesis visual**. 
-                    <br>
-                    El acceso interactivo a las **geometrías**, **coordenadas exactas** de riesgo, y la **base de datos completa con los 30 indicadores**, se desbloquean y se entregan en una <span style="font-weight: bold; color: yellow;">SESIÓN DE DEMOSTRACIÓN PRIVADA</span> para asegurar la confidencialidad de tu estrategia.
-                </p>
+            <p class="friendly-note" style="background-color: #0A1931; color: yellow; font-size: 1.1em; padding: 20px;">
+                AVISO DE EXCLUSIVIDAD: El acceso interactivo a la base de datos completa **es solo para clientes**. La demostración se realiza ÚNICAMENTE en sesiones privadas para asegurar la confidencialidad de la estrategia.
+            </p>
+
+            <div class="map-wrapper">
+                <img 
+                    src="mapa_de_venta.png" 
+                    alt="Mapa de Inteligencia Territorial Exclusiva - Politeia CMAPS" 
+                    style="width: 100%; height: auto; display: block;"
+                >
+            </div>
+            
+            <h3 style="text-align: center; margin-top: 30px;">EL VALOR ESTÁ EN LA INFORMACIÓN DETALLADA:</h3>
+            <div style="max-width: 600px; margin: 20px auto;">
+                <ul>
+                    <li>  **EL SECRETO:** Solo en la Sesión Privada verás las 30 variables completas al hacer clic.</li>
+                    <li>  **EL VALOR:** Conocerás las coordenadas exactas de riesgo y oportunidad, no solo el polígono.</li>
+                </ul>
             </div>
         </div>
+
         <h2 class="section-title">¿PARA QUIÉN ES ESTA INTELIGENCIA?</h2>
 
         <div class="pitch-container">
