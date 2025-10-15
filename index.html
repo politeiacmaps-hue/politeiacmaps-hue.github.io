@@ -31,256 +31,183 @@
             font-size: 3rem; /* Grande y agresivo */
             font-weight: 900;
             letter-spacing: 2px;
-            text-transform: uppercase;
         }
         .header p { 
-            margin: 10px 0 0; 
             font-size: 1.5rem; 
-            font-weight: 300; 
-            color: #FFD700; /* Dorado para destacar la urgencia */
+            font-weight: 300;
+            color: #ccc;
+            margin-top: 15px;
         }
-        .container { 
-            max-width: 1100px; 
-            margin: 0 auto; 
-            padding: 30px 20px; 
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
         }
-        
-        /* SECCIONES */
-        .section { 
-            background-color: #1a1a1a; /* Gris muy oscuro para contraste con el fondo */
-            padding: 40px; 
-            border-radius: 8px; 
-            margin-bottom: 30px; 
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.1); /* Sutil brillo cian */
+
+        /* ESTILO DEL LOGO */
+        .logo-container {
+            margin-bottom: 20px;
+        }
+        .logo-container img {
+            max-width: 250px;
+            height: auto;
+        }
+
+        /* SECCIONES Y LISTAS */
+        .section-title {
+            color: #00FFFF;
+            font-size: 2.2em;
+            margin: 40px 0 20px;
+            border-bottom: 2px solid #0A1931;
+            padding-bottom: 10px;
+        }
+        .pitch-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .pitch-container h3 {
+            color: #00FFFF;
+            border-bottom: 1px dashed #333;
+            padding-bottom: 5px;
+        }
+        .pitch-container ul {
+            list-style: none;
+            padding: 0;
             text-align: left;
         }
-        h2 { 
-            color: #00FFFF; /* Cian, color de la inteligencia y modernidad */
-            border-bottom: 2px solid #FF4500; /* Rojo/Naranja para contraste */
-            padding-bottom: 10px; 
-            margin-top: 0; 
-            font-size: 2em;
-            text-transform: uppercase;
-            text-align: center;
+        .pitch-container li {
+            margin: 10px 0;
+            padding-left: 20px;
+            position: relative;
         }
-        h3 {
-            color: #FFFFFF;
-            margin-top: 25px;
-            font-size: 1.3em;
-        }
-
-        /* LOGO Y DIAGNÓSTICO VISUAL */
-        .logo {
-            max-width: 180px; /* Tamaño del logo */
-            height: auto;
-            margin-bottom: 20px; 
-            border: 3px solid #FF0000; /* DIAGNÓSTICO: Borde Rojo. */
-        }
-
-        /* MANIFIESTO DE VALOR */
-        .manifiesto {
-            background-color: #000000; 
-            padding: 30px 20px;
-            border-bottom: 3px solid #FF4500;
-            text-align: center;
-        }
-        .manifiesto h2 {
-            color: #FF4500; /* Título rojo/naranja para el Manifiesto */
-        }
-        .manifiesto p {
-            font-size: 1.3rem;
-            max-width: 800px;
-            margin: 20px auto;
+        .pitch-container li::before {
+            content: '•';
+            color: #00FFFF;
             font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
         }
 
-        /* MAPA Y NOTA AMABLE */
-        .map-wrapper { 
-            border: 5px solid #00FFFF; 
-            border-radius: 6px; 
-            overflow: hidden; 
-            margin-top: 20px; 
-        }
-        .map-frame {
-            width: 100%; 
-            height: 650px; 
-            border: none;
-            display: block;
-        }
-        .friendly-note {
+        /* CALL TO ACTION (CTA) */
+        .cta-box {
             background-color: #0A1931;
-            color: #999999;
-            padding: 15px;
-            font-size: 0.9rem;
-            margin: 0;
-            text-align: center;
-        }
-        
-        /* CTA Y BOTÓN DE URGENCIA */
-        .cta-box { 
-            background-color: #FF4500; /* Rojo/Naranja para máxima urgencia */
-            padding: 30px; 
-            border-radius: 8px; 
-            text-align: center; 
-            margin-top: 30px; 
-            color: white;
-            box-shadow: 0 0 20px rgba(255, 69, 0, 0.8);
+            padding: 30px;
+            border-radius: 10px;
+            margin: 50px 0;
+            border: 2px solid #00FFFF;
         }
         .cta-box h3 {
             color: white;
+            font-size: 2em;
+            margin-bottom: 15px;
         }
-        .cta-button { 
-            background-color: #00FFFF; /* Cian sobre Naranja para un contraste brutal */
+        .cta-button {
+            display: inline-block;
+            background-color: #00FFFF;
             color: #000000;
-            padding: 15px 35px; 
-            text-decoration: none; 
-            border-radius: 50px; 
-            font-weight: bold; 
-            display: inline-block; 
-            margin-top: 20px; 
-            font-size: 1.3em; 
-            transition: background-color 0.3s, transform 0.2s; 
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            font-size: 1.4em;
+            transition: background-color 0.3s;
         }
-        .cta-button:hover { 
-            background-color: #FFFFFF; 
-            transform: scale(1.05);
+        .cta-button:hover {
+            background-color: #FFFFFF;
+            color: #000000;
         }
 
-        /* BOTÓN ESPECÍFICO PARA ABRIR EL MAPA */
-        .map-button {
-            background-color: #009900; /* Verde para la acción de EXPLORAR */
-            color: white;
-            padding: 15px 35px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 20px;
-            font-size: 1.3em;
-            transition: background-color 0.3s, transform 0.2s;
+        /* EXCLUSIVITY PITCH (NUEVO BLOQUE DE VENTA) */
+        .exclusivity-pitch {
+            padding: 20px; 
+            background-color: #0A1931; 
+            margin-top: 10px;
+            border: 2px solid #00FFFF;
         }
-        .map-button:hover {
-            background-color: #00CC00;
-            transform: scale(1.05);
-        }
-        
-        /* LISTAS DE COTEJO */
-        ul { list-style-type: none; padding: 0; }
-        ul li { 
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="%2300FFFF" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>') no-repeat left center; 
-            padding-left: 25px; 
+        .exclusivity-pitch h3 {
+            color: #00FFFF;
+            font-size: 1.8em;
             margin-bottom: 15px;
-            font-size: 1.1em;
+        }
+        .exclusivity-pitch p {
+            color: white;
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         /* FOOTER */
         .footer {
-            background-color: #0A1931;
-            padding: 20px;
-            color: #999;
+            background-color: #111;
+            padding: 20px 0;
+            color: #aaa;
             font-size: 0.9em;
         }
-        .footer a {
-            color: #00FFFF;
-            text-decoration: none;
-        }
         
-        /* RESPONSIVE */
+        /* MEDIA QUERIES para adaptabilidad */
         @media (max-width: 768px) {
             .header h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
             .header p {
                 font-size: 1.2rem;
             }
-            /* OCULTAR EL IFRAME EN MÓVILES PARA EVITAR EL CUELGUE */
-            .map-wrapper {
-                display: none; 
+            .section-title {
+                font-size: 1.8em;
             }
         }
     </style>
 </head>
 <body>
 
-    <header class="header">
-        <img src="logo1.png" alt="Logo Politeia CMAPS" class="logo">
-        
-        <h1>NO VENDEMOS DATOS. VENDEMOS ENTENDIMIENTO.</h1>
-        <p>TE DAMOS INTELIGENCIA PARA DECIDIR, PLANEAR Y ACTUAR.</p>
-        
-        <h2 style="color: #00FFFF; margin-top: 30px; font-size: 2.5rem; border: none;">NO VEAS EL PROBLEMA, REDEFINE EL ENFOQUE.</h2>
-    </header>
-
     <div class="container">
-        
-        <div class="manifiesto">
-            <h2>EL VERDADERO PARTIDO POR GANAR</h2>
-            <p style="font-style: italic;">"El abstencionismo es el partido más grande de México".</p>
-            <p>CMAPS revela el TERRITORIO DE LOS NO REPRESENTADOS: Millones de ciudadanos desencantados, listos para involucrarse si la propuesta es real y llega a su calle.</p>
+        <div class="header">
+            <div class="logo-container">
+                <h2 style="color: #00FFFF; font-size: 2.5em; margin: 0;">POLITEIA CMAPS</h2>
+            </div>
+            <h1>EL MAPA QUE REVELA EL PODER TERRITORIAL</h1>
+            <p>Inteligencia Ciudadana: Cruzamos Abstencionismo, Riesgo Social y Seguridad para redefinir tu estrategia.</p>
         </div>
 
-        <div class="section" id="mapa">
-            <h2>🔎 LA PRUEBA INNEGABLE DE LA CONSECUENCIA: EXPLORA EL MAPA DEMO</h2>
-            
-            <p>El territorio que define: A veces una elección se define por una colonia; a veces un negocio se pierde por una calle. Hemos observado municipios donde el 60% de abstención los hace hoy los más inseguros. Los mapas no mienten.</p>
+        <h2 class="section-title">NUESTRA TESIS DE ALTO IMPACTO</h2>
 
-            <h3 style="color: #FF4500; text-align: center;">CLAVE DE ANÁLISIS RÁPIDO:</h3>
-            <p style="text-align: center;">🔴 MAPAS ROJOS: Máxima Incidencia Delictiva (La Consecuencia).</p>
-            <p style="text-align: center;">🔵 ÁREAS AZULES: Alta Abstención Electoral (La Causa del Quiebre).</p>
-            
-            <div style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
-                 <a href="https://qgiscloud.com/PoliteiaCmaps/QgisCloud/" target="_blank" class="map-button">
-                    ENTRAR AL MAPA DE ALTO RIESGO (Pantalla Completa)
-                </a>
+        <div class="map-section" style="margin-bottom: 40px;">
+            <img 
+                src="mapa_politeia_demo.png" 
+                alt="Mapa de Inteligencia Territorial Exclusiva - Politeia CMAPS" 
+                style="width: 100%; max-width: 900px; height: auto; margin-top: 30px; border: 4px solid #00FFFF;"
+            >
+
+            <div class="exclusivity-pitch">
+                <h3>LA INTELIGENCIA TERRITORIAL NO ES PÚBLICA. ES EXCLUSIVA.</h3>
+                <p>
+                    Lo que ves es solo la **tesis visual**. 
+                    <br>
+                    El acceso interactivo a las **geometrías**, **coordenadas exactas** de riesgo, y la **base de datos completa con los 30 indicadores**, se desbloquean y se entregan en una <span style="font-weight: bold; color: yellow;">SESIÓN DE DEMOSTRACIÓN PRIVADA</span> para asegurar la confidencialidad de tu estrategia.
+                </p>
             </div>
+        </div>
+        <h2 class="section-title">¿PARA QUIÉN ES ESTA INTELIGENCIA?</h2>
 
-            <p class="friendly-note">
-                Aviso Importante: Dado que el mapa carga capas de datos complejas, la versión incrustada puede tardar unos segundos en computadoras. En celular, recomendamos usar el botón para verlo en pantalla completa.
-            </p>
-
-            <div class="map-wrapper">
-                <iframe 
-                    class="map-frame"
-                    src="https://qgiscloud.com/PoliteiaCmaps/QgisCloud/" 
-                    title="Mapa de Inteligencia Territorial CMAPS"
-                    allowfullscreen
-                    width="100%" 
-                    height="550px" 
-                    frameborder="0" >
-                </iframe>
-            </div>
-            
-            <h3 style="text-align: center;">INSTRUCCIONES SIMPLIFICADAS:</h3>
-            <div style="max-width: 600px; margin: 20px auto;">
+        <div class="pitch-container">
+            <div style="width: 45%; min-width: 300px; margin-bottom: 20px;">
+                <h3>PARA LÍDERES POLÍTICOS Y AUTORIDADES</h3>
                 <ul>
-                    <li>  EXPLORA TU MUNICIPIO: Usa el zoom o el buscador dentro del mapa.</li>
-                    <li>  TOCA EL MAPA: Toca una sección electoral (polígono azul) para ver los datos de abstención e índice de delito.</li>
-                    <li>  ACTÚA DONDE IMPORTA: Los datos te mostrarán dónde está el voto perdido y el riesgo social.</li>
+                    <li>Conoce tu abstencionismo crítico.</li>
+                    <li>Visualiza tu voto duro y zonas de oportunidad.</li>
+                    <li>Detecta las zonas de riesgo social/delito que impactan la participación.</li>
                 </ul>
             </div>
-        </div>
-
-        <div class="section" style="background-color: #0A1931;">
-            <h2>RESULTADOS ESTRATÉGICOS ESPERADOS</h2>
-            <p style="font-style: italic; text-align: center; color: #999;">"Donde el ciudadano vuelve a involucrarse, vuelve la seguridad, la inversión y la esperanza".</p>
-            
-            <div style="display: flex; flex-wrap: wrap; justify-content: space-around; margin-top: 30px;">
-                <div style="width: 45%; min-width: 300px; margin-bottom: 20px;">
-                    <h3>PARA GOBIERNO / PARTIDOS</h3>
-                    <ul>
-                        <li>Incremento de la Gobernabilidad y Confianza Ciudadana.</li>
-                        <li>Políticas Públicas Focalizadas.</li>
-                        <li>Planea políticas basadas en territorio, y no en discurso.</li>
-                    </ul>
-                </div>
-                <div style="width: 45%; min-width: 300px; margin-bottom: 20px;">
-                    <h3>PARA EMPRESARIOS / INVERSIONISTAS</h3>
-                    <ul>
-                        <li>Inversiones Inteligentes y Seguras. </li>
-                        <li>Mejores decisiones de inversión.</li>
-                        <li>Conoce las áreas seguras para invertir.</li>
-                    </ul>
-                </div>
+            <div style="width: 45%; min-width: 300px; margin-bottom: 20px;">
+                <h3>PARA EMPRESARIOS/INVERSIONISTAS</h3>
+                <ul>
+                    <li>Inversiones Inteligentes y Seguras. </li>
+                    <li>Mejores decisiones de inversión.</li>
+                    <li>Conoce las áreas seguras para invertir.</li>
+                </ul>
             </div>
         </div>
 
@@ -293,15 +220,14 @@
             </a>
             
             <p style="margin-top: 20px; font-size: 1em;">
-                Contacto Directo: <a href="mailto:politeiacmaps@gmail.com" style="color: black; font-weight: bold;">politeiacmaps@gmail.com</a> | Tel: <a href="tel:5589342136" style="color: black; font-weight: bold;">5589342136</a>
+                Contacto Directo: <a href="mailto:politeiacmaps@gmail.com" style="color: white; font-weight: bold;">politeiacmaps@gmail.com</a> | Tel: <a href="tel:5589342136" style="color: white; font-weight: bold;">5589342136</a>
             </p>
         </div>
 
     </div>
     
     <footer class="footer">
-        <p style="margin: 5px 0; font-weight: bold; color: white;">POLITEIA CMAPS. LA INTELIGENCIA DEL CIUDADANO.</p>
-        <p style="margin: 5px 0;">Información para entender. Mapas para decidir.</p>
+        <p style="margin: 5px 0; font-weight: bold; color: white;">POLITEIA CMAPS. Derechos Reservados.</p>
     </footer>
 
 </body>
