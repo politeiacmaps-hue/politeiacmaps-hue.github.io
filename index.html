@@ -5,24 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Politeia CMAPS: Inteligencia Territorial Ciudadana</title>
 
-    <link rel="stylesheet" href="https://d1a3f4spazzrp4.cloudfront.net/kepler.gl/uber-fonts/4.0.0/superfine.css">
-    <link href="https://unpkg.com/kepler.gl@3.2.0/umd/keplergl.min.css" rel="stylesheet">
-    <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.css" rel="stylesheet">
-    <link href="https://unpkg.com/maplibre-gl@^3/dist/maplibre-gl.css" rel="stylesheet">
-    
-    <script src="https://unpkg.com/react@16.14.0/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@16.14.0/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/redux@4.0.5/dist/redux.min.js"></script>
-    <script src="https://unpkg.com/react-redux@7.2.0/dist/react-redux.min.js"></script>
-    <script src="https://unpkg.com/kepler.gl@3.2.0/umd/keplergl.min.js"></script>
-    <script src="https://unpkg.com/window.fetch-polyfill"></script>
-
     <style>
-        /* PALETA DE COLORES Y FONT BASE */
         :root {
-            --color-azul: #01306C; /* Azul Profundo (Confianza) */
-            --color-rojo: #E30000; /* Rojo Impacto (Incidencia) */
-            --color-naranja: #FF6600; /* Naranja/Terracota (Urgencia, CTA) */
+            --color-azul: #01306C; /* Confianza/Fuerza */
+            --color-rojo: #E30000; /* Impacto/Advertencia */
+            --color-naranja: #FF6600; /* Urgencia/CTA */
             --color-fondo-claro: #f4f4f4;
             --color-texto: #333;
             --font-principal: 'Arial', sans-serif;
@@ -37,96 +24,203 @@
             background-color: white;
         }
 
-        /* Contenedores Generales */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
 
-        /* HEADER */
+        /* HEADER (AZUL PROFUNDO) */
         header {
             background-color: var(--color-azul);
             color: white;
             padding: 40px 0;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        /* ... (ESTILOS CONTINÚAN AQUÍ) ... */
 
-        .logo {
-            content: url("Logo_fondo_blanco.jpg"); /* RUTA DEL LOGO */
-            max-height: 80px;
-            display: inline-block;
+        header h1 {
+            font-size: 2.8em;
+            margin-bottom: 5px;
+            font-weight: 900; /* Más peso */
         }
         
-        /* ... (ESTILOS CONTINÚAN AQUÍ) ... */
+        header p {
+            font-size: 1.5em;
+            font-weight: 300;
+        }
 
-        /* SECCIÓN DE MAPAS - LA PRUEBA */
+        .logo {
+            content: url("Logo_fondo_blanco.jpg");
+            max-height: 80px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        /* SECCIÓN VALOR (GRIS CLARO) */
+        .seccion-trayectoria {
+            background-color: var(--color-fondo-claro);
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .seccion-trayectoria h2 {
+            color: var(--color-azul);
+            font-size: 2.2em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .seccion-trayectoria h3 {
+             color: var(--color-naranja);
+             font-size: 1.6em;
+             margin-top: 0;
+             font-weight: bold;
+        }
+        
+        .valor-container {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .valor-item {
+            flex-basis: 30%;
+            min-width: 280px;
+            padding: 25px;
+            border-left: 5px solid var(--color-azul); /* Borde Fuerte */
+            text-align: left;
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* SECCIÓN DE IMPACTO (ROJO) */
+        .gancho-impacto {
+            background-color: var(--color-rojo);
+            color: white;
+            padding: 35px 20px;
+            text-align: center;
+            font-size: 1.9em;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            line-height: 1.3;
+        }
+        
+        .gancho-impacto span {
+            font-size: 0.7em;
+            font-weight: 300;
+            display: block;
+            margin-top: 10px;
+            text-transform: none;
+        }
+        
+        /* CONTENEDOR DE MAPA (Fuerza) */
+        .mapa-tabs button.active {
+            color: var(--color-rojo);
+            border-bottom-color: var(--color-rojo);
+        }
+
         .mapa-content {
-            border: 2px solid var(--color-rojo); 
-            height: 600px; /* Altura del mapa */
+            border: 3px solid var(--color-rojo);
+            height: 600px; 
             position: relative;
             overflow: hidden;
             display: none;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
         
         .mapa-content.active {
             display: block;
         }
         
-        /* Asegura que el contenedor de Kepler.gl tome el tamaño de la caja */
-        .mapa-container {
+        .mapa-iframe {
             width: 100%;
             height: 100%;
-            position: relative;
+            border: none;
+            display: block;
+            background-color: #eee; /* Fondo temporal mientras carga */
+        }
+
+        .nota-mapa {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 12px 18px;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            z-index: 100; 
+            border-left: 4px solid var(--color-azul);
+            font-size: 1em;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* SECCIÓN CTA (NARANJA/ROJO) */
+        .seccion-cta {
+            background-color: var(--color-naranja); 
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .seccion-cta h2 {
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            color: white; 
+            font-weight: 900;
         }
         
-        .nota-mapa {
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 10px 15px;
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            z-index: 100; 
-            border-left: 3px solid var(--color-azul);
-            font-size: 0.9em;
+        .btn-cta {
+            background-color: var(--color-rojo);
+            color: white;
+            padding: 25px 50px;
+            text-decoration: none;
+            font-size: 2em;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 5px 0 var(--color-azul); /* Sombra 3D */
+            display: inline-block;
         }
-        /* ... (CIERRE DE ESTILOS) ... */
+        
+        .btn-cta:hover {
+            background-color: var(--color-azul);
+            box-shadow: 0 5px 0 var(--color-rojo); 
+        }
+
     </style>
 </head>
 <body>
 
     <header>
         <div class="container">
-            <div class="logo-container">
-                <img class="logo" alt="Logo de Politeia CMAPS">
-            </div>
-            <h1>Politeia CMAPS: Inteligencia Territorial Ciudadana</h1>
-            <p>No veas el problema, redefine el enfoque</p>
+            <img class="logo" alt="Logo de Politeia CMAPS">
+            <h1>POLITEIA CMAPS: INTELIGENCIA TERRITORIAL CIUDADANA</h1>
+            <p>NO VEAS EL PROBLEMA, REDEFINE EL ENFOQUE</p>
         </div>
     </header>
 
     <section class="seccion-trayectoria">
         <div class="container">
-            <h2>Más de una Década Mapeando la Realidad</h2>
+            <h2>NUESTRO VALOR: INTELIGENCIA PARA DECIDIR</h2>
+            <h3>No vendemos datos. Vendemos entendimiento.</h3>
             <p style="max-width: 800px; margin: 0 auto 30px; font-size: 1.1em;">
-                Desde el **año 2008**, el equipo de CMAPS ha creado, integrado y editado proyectos cartográficos y Sistemas de Información Geográfica (GIS) para el análisis de información. Nuestra experiencia en proyectos multinacionales y electorales garantiza que cada decisión que tomes esté basada en datos precisos y una metodología probada.
+                Desde el **año 2008**, fundamos CMAPS y hemos creado, integrado y editado **Sistemas de Información Geográfica (GIS)** para proyectos multinacionales. Nuestra experiencia garantiza que tu estrategia se base en **datos precisos, confiables y una metodología probada.**
             </p>
 
             <div class="valor-container">
                 <div class="valor-item">
                     <h3>El Ciudadano Entiende.</h3>
-                    <p>Transformamos datos complejos en información accesible para facilitar la comprensión de la realidad social y territorial.</p>
+                    <p>Transformamos **datos complejos** en información accesible para facilitar la comprensión de la realidad social y territorial de su colonia o sección.</p>
                 </div>
                 <div class="valor-item">
                     <h3>El Político Corrige.</h3>
-                    <p>Ofrecemos inteligencia precisa para que las políticas públicas sean focalizadas y resuelvan los problemas donde se originan.</p>
+                    <p>Ofrecemos la **inteligencia precisa** para focalizar políticas públicas y presupuestos, resolviendo problemas donde realmente se originan.</p>
                 </div>
                 <div class="valor-item">
                     <h3>El Emprendedor Decide.</h3>
-                    <p>Brindamos certeza geográfica para que las inversiones sean inteligentes, seguras y aprovechen el potencial real de cada sección.</p>
+                    <p>Brindamos **certeza geográfica** para que las inversiones sean inteligentes, seguras y aprovechen el potencial real de cada mercado.</p>
                 </div>
             </div>
         </div>
@@ -134,38 +228,44 @@
 
     <section class="seccion-mapas">
         <div class="gancho-impacto">
-            Municipios con 60% de Abstención son hoy los más inseguros.<br> Los mapas no mienten, y aquí está la prueba innegable de la consecuencia.
+            ¡LA PRUEBA INNEGABLE DE LA CONSECUENCIA!
+            <br>MUNICIPIOS CON **60% DE ABSTENCIÓN** SON HOY LOS MÁS INSEGUROS.
+            <span>Así se ve la Ciudad de México y el Estado de México cuando el ciudadano se ausenta... y el territorio se rompe.</span>
         </div>
         
         <div class="container">
+            
+            <p style="text-align: center; font-size: 1.3em; font-weight: bold; margin-bottom: 30px; color: var(--color-rojo);">
+                El **abstencionismo es el partido más grande de México**. Más del 40% de los ciudadanos de CDMX y Edomex no votaron, y esas mismas zonas concentran los mayores índices de delitos. **¿Es casualidad o es consecuencia?**
+            </p>
+
             <div class="mapa-tabs">
-                <button class="mapa-tab-btn active" data-tab="delito">1. Incidencia Delictiva (Amplitud)</button>
-                <button class="mapa-tab-btn" data-tab="abstencionismo">2. Elección Presidencial (Profundidad)</button>
+                <button class="mapa-tab-btn active" data-tab="delito" onclick="changeMap('delito')">1. Incidencia Delictiva (Amplitud)</button>
+                <button class="mapa-tab-btn" data-tab="abstencionismo" onclick="changeMap('abstencionismo')">2. Elección Presidencial (Profundidad)</button>
             </div>
             
             <div id="delito" class="mapa-content active">
                 <div class="nota-mapa">
-                    **Mapa 1:** Polígonos municipales del EDOMEX y CDMX con datos del total de delitos a Agosto 2025. Descubre el delito más y menos cometido en tu municipio (Delito vs. Territorio).
+                    **MAPA 1:** Polígonos municipales del EDOMEX y CDMX. Descubre el delito más y menos cometido en tu municipio (Delito vs. Territorio).
                 </div>
-                <div id="kepler-gl-map-delito" class="mapa-container"></div>
+                <iframe src="Incidencia_delictiva_agosto2025.html" class="mapa-iframe" title="Mapa de Incidencia Delictiva"></iframe>
             </div>
 
             <div id="abstencionismo" class="mapa-content">
                 <div class="nota-mapa">
-                    **Mapa 2:** Polígonos de secciones electorales con los resultados de votación 2024. Revelamos la correlación entre la abstención y la inseguridad (Abstención vs. Consecuencia).
+                    **MAPA 2:** Análisis a nivel de sección electoral 2024. Revela la correlación entre la abstención y la inseguridad (Abstención vs. Consecuencia).
                 </div>
-                <div id="kepler-gl-map-abstencionismo" class="mapa-container"></div>
+                <iframe src="Elección_presidencial_2024.html" class="mapa-iframe" title="Mapa de Elección Presidencial"></iframe>
             </div>
         </div>
     </section>
 
     <section class="seccion-cta">
         <div class="container">
-            <h2>SU TERRITORIO ESTÁ CUBIERTO</h2>
+            <h2>DONDE EL CIUDADANO VUELVE A INVOLUCRARSE, VUELVE LA SEGURIDAD, LA INVERSIÓN Y LA ESPERANZA.</h2>
             <p class="cobertura-lista">
                 La información que se muestra en estos demos está **disponible YA** para los estados de:
-                <strong>Estado de México, Ciudad de México, Querétaro, Hidalgo, Chiapas, Quintana Roo y Mérida.</strong>
-                <br>Con gran esfuerzo, trabajamos día a día por la cobertura total de México.
+                <strong style="color: yellow;">Estado de México, Ciudad de México, Querétaro, Hidalgo, Chiapas, Quintana Roo y Mérida.</strong>
             </p>
             <a href="tel:5589342136" class="btn-cta">¡AGENDA TU SESIÓN ESTRATÉGICA!</a>
         </div>
@@ -179,106 +279,16 @@
     </footer>
 
     <script>
-        // CONFIGURACIÓN Y DATOS DEL MAPA 1 (Incidencia_delictiva_agosto2025)
-        // EL CÓDIGO DE TU MAPA 1 HA SIDO EXTRAÍDO DE TU ARCHIVO Y PEGADO AQUÍ
-        const configDelito = {"version":"v1","config":{"visState":{"filters":[],"layers":[
-            // ... (Configuración de capas y filtros de tu mapa de Delito) ...
-            {"id":"g57m60","type":"geojson","config":{"dataId":"geojson-data","label":"Incidencia delictiva - Municipios","color":[241,92,23],"columns":{"geojson":"geometry"},"isVisible":true,"visConfig":{"opacity":0.8,"thickness":0.5,"colorRange":{"name":"Sequential 1","type":"sequential","category":"Uber","colors":["#553403","#8a5a0c","#c0811e","#e3a125","#ffd200","#ffda33","#ffe266","#ffeb99"]},"is3d":false,"filled":true,"enable3d":false,"stroked":true,"pointSize":1,"lineWidth":0.5,"pointSizeFixed":false,"lineWidthFixed":false,"pointType":"circle","sizeRange":[0,10],"heightRange":[0,500],"elevationScale":5,"hiperdeck":false},"textLabel":[]},"visualChannels":{"colorField":{"type":"integer","name":"TOTAL_DELITOS_AGOSTO_2025"},"colorScale":"quantize","sizeField":null,"sizeScale":"linear","strokeColorField":null,"strokeColorScale":"quantize","heightField":null,"heightScale":"linear"}}
-        ],"interactionConfig":{"tooltip":{"fieldsToShow":{"geojson-data":["NOM_ENT","NOM_MUN","TOTAL_DELITOS_AGOSTO_2025","DELITO_MAS_COMETIDO","DELITO_MENOS_COMETIDO"]},"enabled":true},"brush":{"enabled":false},"geocoder":{"enabled":false},"coordinate":{"enabled":false}},"layerBlending":"normal","overlayBlending":"normal","splitMaps":[]},"mapState":{"bearing":0,"dragRotate":false,"latitude":19.373902952961927,"longitude":-99.11084048488125,"pitch":0,"zoom":10.644176750750857,"isSplit":false,"isViewportSynced":true,"isZoomLocked":false,"splitMapViewports":[]},"mapStyle":{"styleType":"satellite","topLayerGroups":{}}},"datasets":[{"info":{"id":"geojson-data","label":"Incidencia_delictiva_agosto2025.geojson"},"data":{
-            // Nota: El contenido del GeoJSON es demasiado grande para incluirse en el código,
-            // pero si se necesita, se puede cargar aquí o con un fetch() a un archivo .geojson externo.
-            // Para la prueba, se usa la configuración original de tu archivo.
-            "features": [], "fields": [] // SE ASUME QUE ESTO SE CARGA AUTOMÁTICAMENTE CON TU CONFIG
-        }}]};
-
-        // CONFIGURACIÓN Y DATOS DEL MAPA 2 (Elección_presidencial_2024)
-        // EL CÓDIGO DE TU MAPA 2 HA SIDO EXTRAÍDO DE TU ARCHIVO Y PEGADO AQUÍ
-        const configAbstencionismo = {"version":"v1","config":{"visState":{"filters":[],"layers":[
-            // ... (Configuración de capas y filtros de tu mapa de Abstencionismo) ...
-            {"id":"c5r95","type":"geojson","config":{"dataId":"geojson-data","label":"Elección_presidencial_2024.geojson","color":[241,92,23],"columns":{"geojson":"geometry"},"isVisible":true,"visConfig":{"opacity":0.8,"thickness":0.5,"colorRange":{"name":"Sequential 1","type":"sequential","category":"Uber","colors":["#0000FF","#00FFFF","#00FF00","#FFFF00","#FF0000"]},"is3d":false,"filled":true,"enable3d":false,"stroked":true,"pointSize":1,"lineWidth":0.5},"textLabel":[]},"visualChannels":{"colorField":{"type":"real","name":"ABSTENCION_PERCENTAGE"},"colorScale":"quantize","sizeField":null,"sizeScale":"linear","strokeColorField":null,"strokeColorScale":"quantize","heightField":null,"heightScale":"linear"}}
-        ],"interactionConfig":{"tooltip":{"fieldsToShow":{"geojson-data":["SECCION","MUNICIPIO","ESTADO","LISTA_NOMINAL","ABSTENCION_PERCENTAGE","RESULTADO_GANADOR","VOTOS_GANADOR"]},"enabled":true},"brush":{"enabled":false},"geocoder":{"enabled":false},"coordinate":{"enabled":false}},"layerBlending":"normal","overlayBlending":"normal","splitMaps":[]},"mapState":{"bearing":0,"dragRotate":false,"latitude":19.39147515461546,"longitude":-99.09712129415205,"pitch":0,"zoom":12.288353501501714,"isSplit":false,"isViewportSynced":true,"isZoomLocked":false,"splitMapViewports":[]},"mapStyle":{"styleType":"satellite","topLayerGroups":{}}},"datasets":[{
-            "info":{"id":"geojson-data","label":"Elección_presidencial_2024.geojson"},"data":{
-             "features": [], "fields": [] // SE ASUME QUE ESTO SE CARGA AUTOMÁTICAMENTE CON TU CONFIG
-        }}]};
-        
-        // FUNCIÓN PARA CARGAR LOS MAPAS EN EL CONTENEDOR
-        function loadKeplerMap(containerId, config) {
-            const keplerGl = window.keplerGl;
-            const datasets = config.datasets;
-            const mapConfig = config.config;
-            
-            // Crea un store (almacén de datos) para el mapa
-            const store = keplerGl.createStore(
-                keplerGl.combineReducers,
-                {},
-                []
-            );
-            
-            // Inicializa y renderiza el componente de Kepler.gl
-            const KeplerGlContainer = React.createElement(
-                ReactRedux.Provider,
-                { store: store },
-                React.createElement(keplerGl.KeplerGl, {
-                    id: containerId,
-                    mapboxApiAccessToken: null, // Asumimos OpenStreetMap o estilo libre para evitar token
-                    width: 600, // Se ajusta con CSS
-                    height: 400, // Se ajusta con CSS
-                    app: {},
-                })
-            );
-
-            ReactDOM.render(KeplerGlContainer, document.getElementById(containerId));
-            
-            // Carga la configuración y los datos
-            const loadedData = keplerGl.KeplerGlSchema.load(datasets, mapConfig);
-            window.setTimeout(() => {
-                store.dispatch(
-                    keplerGl.addDataToMap({
-                        datasets: loadedData.datasets,
-                        config: loadedData.config
-                    })
-                );
-            }, 100);
-        }
-
-        // LÓGICA DE TABS Y CARGA DE MAPAS
-        document.addEventListener('DOMContentLoaded', () => {
+        function changeMap(targetId) {
             const tabs = document.querySelectorAll('.mapa-tab-btn');
             const contents = document.querySelectorAll('.mapa-content');
             
-            let delitoLoaded = false;
-            let abstencionismoLoaded = false;
+            tabs.forEach(t => t.classList.remove('active'));
+            contents.forEach(c => c.classList.remove('active'));
             
-            const loadMap = (tabId) => {
-                if (tabId === 'delito' && !delitoLoaded) {
-                    loadKeplerMap('kepler-gl-map-delito', configDelito);
-                    delitoLoaded = true;
-                } else if (tabId === 'abstencionismo' && !abstencionismoLoaded) {
-                    loadKeplerMap('kepler-gl-map-abstencionismo', configAbstencionismo);
-                    abstencionismoLoaded = true;
-                }
-            };
-            
-            tabs.forEach(tab => {
-                tab.addEventListener('click', () => {
-                    const targetId = tab.getAttribute('data-tab');
-
-                    // Desactivar todos los botones y contenidos
-                    tabs.forEach(t => t.classList.remove('active'));
-                    contents.forEach(c => c.classList.remove('active'));
-
-                    // Activar el botón y el contenido objetivo
-                    tab.classList.add('active');
-                    document.getElementById(targetId).classList.add('active');
-                    
-                    // Cargar el mapa
-                    loadMap(targetId);
-                });
-            });
-            
-            // Cargar el mapa por defecto (DELITO)
-            loadMap('delito');
-        });
+            document.querySelector(`.mapa-tab-btn[data-tab="${targetId}"]`).classList.add('active');
+            document.getElementById(targetId).classList.add('active');
+        }
     </script>
 </body>
 </html>
