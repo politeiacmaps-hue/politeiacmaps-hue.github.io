@@ -3,217 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>POLITEIA CMAPS: El Territorio que Define | Redefine el Enfoque</title>
-    <meta name="description" content="Inteligencia territorial ciudadana que cruza abstencionismo, riesgo social y seguridad. El mapa que revela dónde se gana, se pierde y se reconstruye la confianza.">
-    <link rel="stylesheet" href="style.css"> 
-    
+    <title>Politeia Cmaps - Análisis Geoespacial de Alto Valor</title>
     <style>
-        /* ESTILOS INTERNOS (Para garantizar que se vean bien en cualquier parte) */
-        body { 
-            font-family: 'Arial', sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            background-color: #000000;
-            color: #FFFFFF;
-            line-height: 1.6;
-            text-align: center; 
-        }
-
-        .header { 
-            background-color: #0A1931; 
-            color: white; 
-            padding: 50px 20px; 
-            text-align: center; 
-            border-bottom: 3px solid #00FFFF;
-        }
-        .header h1 { 
-            margin: 0; 
-            font-size: 3rem; 
-            font-weight: 900;
-            letter-spacing: 2px;
-        }
-        .header p { 
-            font-size: 1.5rem; 
-            font-weight: 300;
-            color: #ccc;
-            margin-top: 15px;
-        }
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .section {
-            margin: 40px 0;
-            padding: 20px 0;
-        }
-        .map-button {
-            display: inline-block;
-            background-color: #FF4500; /* Naranja/Rojo de acción */
-            color: #FFFFFF;
-            padding: 15px 30px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            font-size: 1.4em;
-            transition: background-color 0.3s;
-        }
-        .map-button:hover {
-            background-color: #009900; /* Verde de la esperanza */
-        }
-        .map-wrapper {
-            margin-top: 30px;
-            overflow: hidden;
-            /* El borde llamativo para la estrategia de venta */
-            border: 5px solid #FF4500; 
-        }
-        .friendly-note {
-            font-style: italic;
-            margin-top: 10px;
-            font-size: 0.9em;
-            color: #888;
-        }
-        /* Estilos de las secciones de pitch */
-        .section-title {
-            color: #00FFFF;
-            font-size: 2.2em;
-            margin: 40px 0 20px;
-            border-bottom: 2px solid #0A1931;
-            padding-bottom: 10px;
-        }
-        .pitch-container {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-        .pitch-container h3 {
-            color: #00FFFF;
-            border-bottom: 1px dashed #333;
-            padding-bottom: 5px;
-        }
-        .pitch-container ul {
-            list-style: none;
+        /* Estilos críticos para el mapa de venta */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
             padding: 0;
-            text-align: left;
+            background-color: #f4f4f4;
         }
-        .pitch-container li {
-            margin: 10px 0;
-            padding-left: 20px;
-            position: relative;
-        }
-        .pitch-container li::before {
-            content: '•';
-            color: #00FFFF;
-            font-weight: bold;
-            display: inline-block;
-            width: 1em;
-            margin-left: -1em;
-        }
-        .cta-box {
-            background-color: #0A1931;
-            padding: 30px;
+        .mapa-contenedor {
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: white;
             border-radius: 10px;
-            margin: 50px 0;
-            border: 2px solid #00FFFF;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
-        .cta-box h3 {
+        .mapa-imagen {
+            width: 100%;
+            height: auto;
+            border: 5px solid #cc0000; /* Borde Rojo: Muestra que el análisis es SANGRE y exclusivo */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            margin-bottom: 30px;
+            cursor: zoom-in; /* Da la sensación de interactividad */
+        }
+        .subtitulo {
+            font-size: 1.6em;
+            color: #333;
+            margin-bottom: 25px;
+            font-weight: 300;
+        }
+        .cta-boton {
+            background-color: #007bff; /* Azul de Contacto */
             color: white;
-            font-size: 2em;
-            margin-bottom: 15px;
+            padding: 18px 35px;
+            text-decoration: none;
+            border-radius: 50px; /* Botón más redondo */
+            font-size: 1.3em;
+            font-weight: 700;
+            display: inline-block;
+            transition: background-color 0.3s, transform 0.2s;
+            text-transform: uppercase;
         }
-        
-        /* MEDIA QUERIES para adaptabilidad */
-        @media (max-width: 768px) {
-            .header h1 { font-size: 2.2rem; }
-            .header p { font-size: 1.2rem; }
-            .section-title { font-size: 1.8em; }
+        .cta-boton:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px); /* Efecto de que va a hacer clic */
+        }
+        .disclaimer {
+            margin-top: 15px;
+            font-size: 0.9em;
+            color: #777;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="header">
-            <h2 style="color: #00FFFF; font-size: 2.5em; margin: 0;">POLITEIA CMAPS</h2>
-            <h1>EL MAPA QUE REVELA EL PODER TERRITORIAL</h1>
-            <p>Inteligencia Ciudadana: Cruzamos Abstencionismo, Riesgo Social y Seguridad para redefinir tu estrategia.</p>
-        </div>
+    <div class="mapa-contenedor">
+        <h1>Análisis Geoespacial de Alto Valor: CDMX & EDOMEX</h1>
+        
+        <img src="mapa_analisis_final.png" alt="Análisis de Tendencias Electorales y Delictivas de Politeia" class="mapa-imagen">
+        
+        <p class="subtitulo">Visualiza la concentración del fenómeno. **30 Indicadores Confidenciales** disponibles en demo interactiva.</p>
 
-        <h2 class="section-title">🔎 LA PRUEBA INNEGABLE DE LA CONSECUENCIA</h2>
+        <a href="mailto:tu_correo_de_ventas@politeia.com?subject=Solicitud de Demo Interactiva - Análisis Geoespacial" class="cta-boton">
+            SOLICITA TU DEMO INTERACTIVA PRIVADA
+        </a>
 
-        <div class="section" id="mapa">
-            
-            <h3 style="color: #FF4500; text-align: center;">PRUEBA DE CONCEPTO: LA TESIS ES VISUAL.</h3>
-            <p style="text-align: center;">🔴 LÍNEAS ROJAS: Sección Electoral.</p>
-            <p style="text-align: center;">🔵 ÁREAS AZULES: Alta Abstención Electoral (La Causa del Quiebre).</p>
-            
-            <div style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
-                 <a href="mailto:politeiacmaps@gmail.com?subject=Solicitud%20de%20Demo%20Interactivo" class="map-button" style="background-color: #009900;">
-                    SOLICITAR DEMO INTERACTIVO PRIVADO
-                </a>
-            </div>
-
-            <p class="friendly-note" style="background-color: #0A1931; color: yellow; font-size: 1.1em; padding: 20px;">
-                AVISO DE EXCLUSIVIDAD: El acceso interactivo a la base de datos completa **es solo para clientes**. La demostración se realiza ÚNICAMENTE en sesiones privadas para asegurar la confidencialidad de la estrategia.
-            </p>
-
-            <div class="map-wrapper">
-                <img 
-                    src="mapa_de_venta.png" 
-                    alt="Mapa de Inteligencia Territorial Exclusiva - Politeia CMAPS" 
-                    style="width: 100%; height: auto; display: block;"
-                >
-            </div>
-            
-            <h3 style="text-align: center; margin-top: 30px;">EL VALOR ESTÁ EN LA INFORMACIÓN DETALLADA:</h3>
-            <div style="max-width: 600px; margin: 20px auto;">
-                <ul>
-                    <li>  **EL SECRETO:** Solo en la Sesión Privada verás las 30 variables completas al hacer clic.</li>
-                    <li>  **EL VALOR:** Conocerás las coordenadas exactas de riesgo y oportunidad, no solo el polígono.</li>
-                </ul>
-            </div>
-        </div>
-
-        <h2 class="section-title">¿PARA QUIÉN ES ESTA INTELIGENCIA?</h2>
-
-        <div class="pitch-container">
-            <div style="width: 45%; min-width: 300px; margin-bottom: 20px;">
-                <h3>PARA LÍDERES POLÍTICOS Y AUTORIDADES</h3>
-                <ul>
-                    <li>Conoce tu abstencionismo crítico.</li>
-                    <li>Visualiza tu voto duro y zonas de oportunidad.</li>
-                    <li>Detecta las zonas de riesgo social/delito que impactan la participación.</li>
-                </ul>
-            </div>
-            <div style="width: 45%; min-width: 300px; margin-bottom: 20px;">
-                <h3>PARA EMPRESARIOS/INVERSIONISTAS</h3>
-                <ul>
-                    <li>Inversiones Inteligentes y Seguras. </li>
-                    <li>Mejores decisiones de inversión.</li>
-                    <li>Conoce las áreas seguras para invertir.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="cta-box">
-            <h3>¡ACTÚA AHORA! AGENDA TU SESIÓN ESTRATÉGICA</h3>
-            <p style="font-size: 1.3em;">Si eres líder, empresario o autoridad, hablemos de cómo mapear contigo. Este demo es solo la punta del iceberg.</p>
-            
-            <a href="mailto:politeiacmaps@gmail.com" class="cta-button">
-                SOLICITAR SESIÓN ESTRATÉGICA
-            </a>
-            
-            <p style="margin-top: 20px; font-size: 1em;">
-                Contacto Directo: <a href="mailto:politeiacmaps@gmail.com" style="color: white; font-weight: bold;">politeiacmaps@gmail.com</a> | Tel: <a href="tel:5589342136" style="color: white; font-weight: bold;">5589342136</a>
-            </p>
-        </div>
-
+        <p class="disclaimer">El mapa interactivo completo con las 30 variables se demuestra en sesión privada por razones de confidencialidad de la información.</p>
     </div>
-    
-    <footer class="footer">
-        <p style="margin: 5px 0; font-weight: bold; color: white;">POLITEIA CMAPS. Derechos Reservados.</p>
-    </footer>
 
-</body>
+    </body>
 </html>
