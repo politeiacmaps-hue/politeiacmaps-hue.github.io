@@ -1,525 +1,523 @@
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Politeia CMAPS: Inteligencia Territorial Ciudadana | La Prueba Innegable</title>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Politeia CMAPS: Inteligencia Territorial Ciudadana | La Prueba Innegable</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
-    <style>
-        :root {
-            --color-azul-fuerte: #01306C; 
-            --color-azul-header: #0e376b; /* COLOR ACTUALIZADO: Azul más claro y vibrante */
-            --color-rojo-impacto: #E30000; 
-            --color-naranja-cta: #FF6600; 
-            --color-fondo-claro: #f8f8f8; 
-            --color-texto-principal: #222;
-        }
-
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            color: var(--color-texto-principal);
-            background-color: white;
-            scroll-behavior: smooth;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* HEADER (AZUL DE IMPACTO: #2f7eab) */
-        header {
-            background-color: var(--color-azul-header); 
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        header h1 {
-            font-family: 'Roboto Condensed', sans-serif;
-            font-size: 3em;
-            margin: 5px 0;
-            font-weight: 900;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-        
-        header p {
-            font-size: 1.6em;
-            font-weight: 300;
-            margin-top: 5px;
-            color: #ccc;
-        }
-
-        .logo {
-            content: url("logo_fondo_azul.jpg"); 
-            max-height: 90px;
-            display: inline-block;
-            margin-bottom: 25px;
-        }
-        
-        /* SECCIÓN VALOR Y EXPERIENCIA */
-        .seccion-trayectoria {
-            background-color: white;
-            padding: 60px 0 40px 0;
-            text-align: center;
-        }
-
-        .seccion-trayectoria h2 {
-            color: var(--color-azul-fuerte);
-            font-family: 'Roboto Condensed', sans-serif;
-            font-size: 2.6em;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            font-weight: 900;
-        }
-        
-        /* BLOQUE DE EXPERIENCIA */
-        .bloque-experiencia {
-            background-color: var(--color-fondo-claro);
-            border-radius: 8px;
-            padding: 30px;
-            margin: 40px auto 50px auto;
-            max-width: 900px;
-            text-align: left;
-            border-left: 6px solid var(--color-naranja-cta);
-        }
-
-        .bloque-experiencia h3 {
-            /* Título modificado para sonar más impactante */
-            color: var(--color-azul-fuerte);
-            font-size: 1.8em;
-            margin-top: 0;
-            font-family: 'Roboto Condensed', sans-serif;
-            font-weight: 700;
-        }
-
-        .bloque-experiencia p {
-            font-size: 1.1em;
-        }
-        
-        /* ITEMS DE VALOR */
-        .valor-container {
-            display: flex;
-            flex-wrap: wrap; 
-            justify-content: space-between;
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .valor-item {
-            flex-basis: 30%;
-            min-width: 250px;
-            padding: 25px;
-            border-bottom: 5px solid var(--color-rojo-impacto);
-            background-color: var(--color-fondo-claro);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            text-align: left; 
-        }
-        
-        /* REGLA CLAVE: CENTRAR LA TERCERA CAJA (EL EMPRENDEDOR) */
-        .valor-item:nth-child(3) {
-            flex-basis: 100%; 
-            width: 30%; 
-            margin: 0 auto; 
-            text-align: center; 
-            margin-top: 30px; 
-        }
-        
-        .valor-item h4 {
-            font-family: 'Roboto Condensed', sans-serif;
-            color: var(--color-azul-fuerte);
-            font-size: 1.5em;
-            margin-top: 0;
-            font-weight: 900;
-        }
-        
-        /* SECCIÓN DE IMPACTO (ROJO) */
-        .seccion-impacto {
-            background-color: var(--color-fondo-claro);
-            padding: 50px 0 0 0;
-        }
-
-        .gancho-impacto {
-            background-color: var(--color-rojo-impacto);
-            color: white;
-            padding: 40px 30px;
-            text-align: center;
-            font-size: 2.2em;
-            font-weight: 900;
-            text-transform: uppercase;
-            line-height: 1.2;
-            box-shadow: 0 8px 20px rgba(227, 0, 0, 0.5);
-            margin-bottom: 50px;
-            border-radius: 8px;
-        }
-        
-        .gancho-impacto span {
-            font-family: 'Roboto', sans-serif;
-            font-size: 0.6em;
-            font-weight: 400;
-            display: block;
-            margin-top: 15px;
-            text-transform: none;
-            color: #ffcccc;
-        }
-        
-        .bloque-crisis {
-            text-align: center;
-            font-size: 1.4em;
-            font-weight: 700;
-            margin-bottom: 30px;
-            color: var(--color-azul-fuerte);
-        }
-
-        .bloque-crisis strong {
-            color: var(--color-rojo-impacto);
-        }
-        
-        /* INSTRUCCIONES DE MAPA */
-        .instrucciones-mapa {
-            background-color: white;
-            border: 2px dashed var(--color-naranja-cta);
-            border-radius: 8px;
-            padding: 25px;
-            margin-bottom: 30px;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .instrucciones-mapa h3 {
-            color: var(--color-naranja-cta);
-            font-family: 'Roboto Condensed', sans-serif;
-            font-size: 1.8em;
-            margin-top: 0;
-            margin-bottom: 10px;
-        }
-        
-        .instrucciones-mapa ul {
-            list-style: none;
-            padding: 0;
-            margin: 15px 0 0 0;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            font-size: 1.1em;
-            font-weight: 700;
-            flex-wrap: wrap;
-        }
-        
-        .instrucciones-mapa li {
-            padding: 5px 10px;
-            border-radius: 3px;
-            color: var(--color-azul-fuerte);
-        }
-
-        /* CONTENEDOR DE MAPA */
-        .mapa-tabs {
-            display: flex;
-            margin-bottom: 20px;
-            border-bottom: 3px solid var(--color-azul-fuerte);
-            gap: 15px;
-        }
-        
-        .mapa-tab-btn {
-            font-family: 'Roboto Condensed', sans-serif;
-            background: none;
-            border: none;
-            padding: 15px 30px;
-            cursor: pointer;
-            font-size: 1.2em;
-            font-weight: 700;
-            color: var(--color-texto-principal);
-            border-bottom: 5px solid transparent;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-        }
-
-        .mapa-tab-btn:hover {
-            color: var(--color-naranja-cta);
-        }
-
-        .mapa-tab-btn.active {
-            color: var(--color-rojo-impacto);
-            border-bottom-color: var(--color-rojo-impacto);
-        }
-
-        .mapa-content {
-            border: 4px solid var(--color-rojo-impacto);
-            height: 650px;
-            position: relative;
-            overflow: hidden;
-            display: none;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-            border-radius: 8px;
-            margin-bottom: 40px;
-        }
-        
-        .mapa-content.active {
-            display: block;
-        }
-        
-        .mapa-iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            display: block;
-        }
-        
-        .nota-mapa {
-            background-color: rgba(255, 255, 255, 0.98);
-            padding: 15px 20px;
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            z-index: 100; 
-            border-left: 5px solid var(--color-naranja-cta);
-            font-size: 1.1em;
-            font-weight: bold;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-            border-radius: 3px;
-        }
-
-        /* SECCIÓN CTA Y COBERTURA */
-        .seccion-cta {
-            background-color: var(--color-naranja-cta); 
-            color: white;
-            padding: 60px 0;
-            text-align: center;
-        }
-        
-        .bloque-cobertura {
-            background-color: white;
-            color: var(--color-texto-principal);
-            padding: 30px;
-            border-radius: 8px;
-            max-width: 900px;
-            margin: 40px auto;
-            border: 3px solid var(--color-azul-fuerte);
-            text-align: left;
-        }
-
-        .bloque-cobertura h4 {
-            color: var(--color-rojo-impacto);
-            font-size: 1.6em;
-            margin-top: 0;
-            font-family: 'Roboto Condensed', sans-serif;
-            font-weight: 900;
-            text-transform: uppercase;
-        }
-        
-        .bloque-cobertura strong {
-            color: var(--color-azul-fuerte);
-        }
-        
-        .btn-cta {
-            background-color: var(--color-rojo-impacto);
-            color: white;
-            padding: 25px 50px;
-            text-decoration: none;
-            font-size: 2.2em;
-            font-weight: 900;
-            border-radius: 10px;
-            transition: background-color 0.3s ease;
-            box-shadow: 0 8px 0 var(--color-azul-fuerte);
-            display: inline-block;
-            text-transform: uppercase;
-            font-family: 'Roboto Condensed', sans-serif;
-            margin-top: 30px;
-        }
-        
-        .btn-cta:hover {
-            background-color: var(--color-azul-fuerte);
-            box-shadow: 0 8px 0 var(--color-rojo-impacto); 
-        }
-
-        /* FOOTER */
-        footer {
-            background-color: var(--color-azul-fuerte);
-            color: #999;
-            padding: 25px 0;
-            text-align: center;
-            font-size: 1em;
-        }
-        
-        footer a {
-            /* Asegura que los enlaces en el footer tomen el color gris, incluso con el mailto: */
-            color: inherit; 
-            text-decoration: none;
+    <style>
+        :root {
+            --color-azul-fuerte: #01306C; 
+            --color-azul-header: #40507B; /* COLOR ACTUALIZADO: Azul más claro y vibrante */
+            --color-rojo-impacto: #E30000; 
+            --color-naranja-cta: #FF6600; 
+            --color-fondo-claro: #f8f8f8; 
+            --color-texto-principal: #222;
         }
 
-        /* RESPONSIVE CSS - FIX PARA EL CELULAR Y CAJAS */
-        @media (max-width: 900px) {
-            .valor-container {
-                flex-direction: column;
-                align-items: center;
-            }
-            .valor-item {
-                flex-basis: 90%;
-            }
-            .gancho-impacto h1 {
-                font-size: 1.8em;
-            }
-            .mapa-content {
-                height: 450px;
-            }
-            .btn-cta {
-                font-size: 1.8em;
-            }
-            .valor-item:nth-child(3) {
-                flex-basis: 90%; /* Ajuste responsive */
-                width: 90%;
-            }
-            
-            /* **SOLUCIÓN AL CUADRO BLANCO** - OCULTAR LA NOTA DEL MAPA EN MÓVILES */
-            .nota-mapa {
-                display: none !important; 
-            }
-        }
-    </style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: var(--color-texto-principal);
+            background-color: white;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* HEADER (AZUL DE IMPACTO: #2f7eab) */
+        header {
+            background-color: var(--color-azul-header); 
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        header h1 {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 3em;
+            margin: 5px 0;
+            font-weight: 900;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        header p {
+            font-size: 1.6em;
+            font-weight: 300;
+            margin-top: 5px;
+            color: #ccc;
+        }
+
+        .logo {
+            content: url("logo_fondo_azul.jpg"); 
+            max-height: 90px;
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+        
+        /* SECCIÓN VALOR Y EXPERIENCIA */
+        .seccion-trayectoria {
+            background-color: white;
+            padding: 60px 0 40px 0;
+            text-align: center;
+        }
+
+        .seccion-trayectoria h2 {
+            color: var(--color-azul-fuerte);
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 2.6em;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            font-weight: 900;
+        }
+        
+        /* BLOQUE DE EXPERIENCIA */
+        .bloque-experiencia {
+            background-color: var(--color-fondo-claro);
+            border-radius: 8px;
+            padding: 30px;
+            margin: 40px auto 50px auto;
+            max-width: 900px;
+            text-align: left;
+            border-left: 6px solid var(--color-naranja-cta);
+        }
+
+        .bloque-experiencia h3 {
+            /* Título modificado para sonar más impactante */
+            color: var(--color-azul-fuerte);
+            font-size: 1.8em;
+            margin-top: 0;
+            font-family: 'Roboto Condensed', sans-serif;
+            font-weight: 700;
+        }
+
+        .bloque-experiencia p {
+            font-size: 1.1em;
+        }
+        
+        /* ITEMS DE VALOR */
+        .valor-container {
+            display: flex;
+            flex-wrap: wrap; 
+            justify-content: space-between;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .valor-item {
+            flex-basis: 30%;
+            min-width: 250px;
+            padding: 25px;
+            border-bottom: 5px solid var(--color-rojo-impacto);
+            background-color: var(--color-fondo-claro);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            text-align: left; 
+        }
+        
+        /* REGLA CLAVE: CENTRAR LA TERCERA CAJA (EL EMPRENDEDOR) */
+        .valor-item:nth-child(3) {
+            flex-basis: 100%; 
+            width: 30%; 
+            margin: 0 auto; 
+            text-align: center; 
+            margin-top: 30px; 
+        }
+        
+        .valor-item h4 {
+            font-family: 'Roboto Condensed', sans-serif;
+            color: var(--color-azul-fuerte);
+            font-size: 1.5em;
+            margin-top: 0;
+            font-weight: 900;
+        }
+        
+        /* SECCIÓN DE IMPACTO (ROJO) */
+        .seccion-impacto {
+            background-color: var(--color-fondo-claro);
+            padding: 50px 0 0 0;
+        }
+
+        .gancho-impacto {
+            background-color: var(--color-rojo-impacto);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            font-size: 2.2em;
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 1.2;
+            box-shadow: 0 8px 20px rgba(227, 0, 0, 0.5);
+            margin-bottom: 50px;
+            border-radius: 8px;
+        }
+        
+        .gancho-impacto span {
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.6em;
+            font-weight: 400;
+            display: block;
+            margin-top: 15px;
+            text-transform: none;
+            color: #ffcccc;
+        }
+        
+        .bloque-crisis {
+            text-align: center;
+            font-size: 1.4em;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: var(--color-azul-fuerte);
+        }
+
+        .bloque-crisis strong {
+            color: var(--color-rojo-impacto);
+        }
+        
+        /* INSTRUCCIONES DE MAPA */
+        .instrucciones-mapa {
+            background-color: white;
+            border: 2px dashed var(--color-naranja-cta);
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .instrucciones-mapa h3 {
+            color: var(--color-naranja-cta);
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 1.8em;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        
+        .instrucciones-mapa ul {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0 0 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            font-size: 1.1em;
+            font-weight: 700;
+            flex-wrap: wrap;
+        }
+        
+        .instrucciones-mapa li {
+            padding: 5px 10px;
+            border-radius: 3px;
+            color: var(--color-azul-fuerte);
+        }
+
+        /* CONTENEDOR DE MAPA */
+        .mapa-tabs {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 3px solid var(--color-azul-fuerte);
+            gap: 15px;
+        }
+        
+        .mapa-tab-btn {
+            font-family: 'Roboto Condensed', sans-serif;
+            background: none;
+            border: none;
+            padding: 15px 30px;
+            cursor: pointer;
+            font-size: 1.2em;
+            font-weight: 700;
+            color: var(--color-texto-principal);
+            border-bottom: 5px solid transparent;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .mapa-tab-btn:hover {
+            color: var(--color-naranja-cta);
+        }
+
+        .mapa-tab-btn.active {
+            color: var(--color-rojo-impacto);
+            border-bottom-color: var(--color-rojo-impacto);
+        }
+
+        .mapa-content {
+            border: 4px solid var(--color-rojo-impacto);
+            height: 650px;
+            position: relative;
+            overflow: hidden;
+            display: none;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+        
+        .mapa-content.active {
+            display: block;
+        }
+        
+        .mapa-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+        
+        .nota-mapa {
+            background-color: rgba(255, 255, 255, 0.98);
+            padding: 15px 20px;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            z-index: 100; 
+            border-left: 5px solid var(--color-naranja-cta);
+            font-size: 1.1em;
+            font-weight: bold;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 3px;
+        }
+
+        /* SECCIÓN CTA Y COBERTURA */
+        .seccion-cta {
+            background-color: var(--color-naranja-cta); 
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .bloque-cobertura {
+            background-color: white;
+            color: var(--color-texto-principal);
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 900px;
+            margin: 40px auto;
+            border: 3px solid var(--color-azul-fuerte);
+            text-align: left;
+        }
+
+        .bloque-cobertura h4 {
+            color: var(--color-rojo-impacto);
+            font-size: 1.6em;
+            margin-top: 0;
+            font-family: 'Roboto Condensed', sans-serif;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+        
+        .bloque-cobertura strong {
+            color: var(--color-azul-fuerte);
+        }
+        
+        .btn-cta {
+            background-color: var(--color-rojo-impacto);
+            color: white;
+            padding: 25px 50px;
+            text-decoration: none;
+            font-size: 2.2em;
+            font-weight: 900;
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 8px 0 var(--color-azul-fuerte);
+            display: inline-block;
+            text-transform: uppercase;
+            font-family: 'Roboto Condensed', sans-serif;
+            margin-top: 30px;
+        }
+        
+        .btn-cta:hover {
+            background-color: var(--color-azul-fuerte);
+            box-shadow: 0 8px 0 var(--color-rojo-impacto); 
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: var(--color-azul-fuerte);
+            color: #999;
+            padding: 25px 0;
+            text-align: center;
+            font-size: 1em;
+        }
+        
+        /* RESPONSIVE CSS - FIX PARA EL CELULAR Y CAJAS */
+        @media (max-width: 900px) {
+            .valor-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .valor-item {
+                flex-basis: 90%;
+            }
+            .gancho-impacto h1 {
+                font-size: 1.8em;
+            }
+            .mapa-content {
+                height: 450px;
+            }
+            .btn-cta {
+                font-size: 1.8em;
+            }
+            .valor-item:nth-child(3) {
+                flex-basis: 90%; /* Ajuste responsive */
+                width: 90%;
+            }
+            
+            /* **SOLUCIÓN AL CUADRO BLANCO** - OCULTAR LA NOTA DEL MAPA EN MÓVILES */
+            .nota-mapa {
+                display: none !important; 
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <header>
-        <div class="container">
-            <img class="logo" alt="Logo de Politeia CMAPS">
-            <h1>POLITEIA CMAPS: INTELIGENCIA TERRITORIAL CIUDADANA</h1>
-            <p>NO VEAS EL PROBLEMA, REDEFINE EL ENFOQUE</p>
-        </div>
-    </header>
+    <header>
+        <div class="container">
+            <img class="logo" alt="Logo de Politeia CMAPS">
+            <h1>POLITEIA CMAPS: INTELIGENCIA TERRITORIAL CIUDADANA</h1>
+            <p>NO VEAS EL PROBLEMA, REDEFINE EL ENFOQUE</p>
+        </div>
+    </header>
 
-    <section class="seccion-trayectoria">
-        <div class="container">
-            <h2>NUESTRA TRAYECTORIA Y LA GÉNESIS DEL PRODUCTO</h2>
-            
-            <div class="bloque-experiencia">
-                <h3>LA CULMINACIÓN DE +15 AÑOS DE INTELIGENCIA GEOGRÁFICA Y ESTRATEGIA.</h3>
-                <p>Desde nuestra fundación en 2008, hemos dedicado más de una década y media a la creación, integración y corrección de Sistemas de Información Geográfica (GIS) a gran escala y precisión milimétrica. Nuestra experiencia no se basa en teoría, sino en proyectos concretos que han redefinido la toma de decisiones:</p>
-                <ul>
-                    <li>La Plataforma GIS Electoral-Seguridad en México: Desarrollamos un GIS robusto y temático que integra distritos, secciones, datos censales (INEGI), registros históricos y bases de datos de, incidencia delictiva y acoso sexual en estados clave.</li>
-                    <li>Ingeniería de Red Multinacional: Lideramos proyectos de actualización y rediseño cartográfico para redes de banda ancha en diversas ciudades de E.E.U.U., demostrando nuestra capacidad para gestionar datos de infraestructura crítica a nivel internacional.</li>
-                </ul>
-                <p>Esta trayectoria sin precedentes es el cimiento de Politeia CMAPS: el mapa que no solo muestra la realidad, sino que te entrega la inteligencia definitiva para entender y reconstruir el territorio.</p>
-            </div>
-            
-            <h3>No vendemos datos. Vendemos entendimiento.</h3>
+    <section class="seccion-trayectoria">
+        <div class="container">
+            <h2>NUESTRA TRAYECTORIA Y LA GÉNESIS DEL PRODUCTO</h2>
+            
+            <div class="bloque-experiencia">
+                <h3>LA CULMINACIÓN DE +15 AÑOS DE INTELIGENCIA GEOGRÁFICA Y ESTRATEGIA.</h3>
+                <p>Desde nuestra fundación en 2008, hemos dedicado más de una década y media a la creación, integración y corrección de Sistemas de Información Geográfica (GIS) a gran escala y precisión milimétrica. Nuestra experiencia no se basa en teoría, sino en proyectos concretos que han redefinido la toma de decisiones:</p>
+                <ul>
+                    <li>La Plataforma GIS Electoral-Seguridad en México: Desarrollamos un GIS robusto y temático que integra distritos, secciones, datos censales (INEGI), registros históricos y bases de datos de, incidencia delictiva y acoso sexual en estados clave.</li>
+                    <li>Ingeniería de Red Multinacional: Lideramos proyectos de actualización y rediseño cartográfico para redes de banda ancha en diversas ciudades de E.E.U.U., demostrando nuestra capacidad para gestionar datos de infraestructura crítica a nivel internacional.</li>
+                </ul>
+                <p>Esta trayectoria sin precedentes es el cimiento de Politeia CMAPS: el mapa que no solo muestra la realidad, sino que te entrega la inteligencia definitiva para entender y reconstruir el territorio.</p>
+            </div>
+            
+            <h3>No vendemos datos. Vendemos entendimiento.</h3>
 
-            <div class="valor-container">
-                <div class="valor-item">
-                    <h4>EL CIUDADANO ENTIENDE.</h4>
-                    <p>Transformamos datos complejos en información accesible para facilitar la comprensión de la realidad social y territorial.</p>
-                </div>
-                <div class="valor-item">
-                    <h4>EL POLÍTICO CORRIGE.</h4>
-                    <p>Ofrecemos la inteligencia precisa para focalizar políticas públicas y presupuestos, resolviendo problemas donde realmente se originan.</p>
-                </div>
-                <div class="valor-item">
-                    <h4>EL EMPRENDEDOR DECIDE.</h4>
-                    <p>Brindamos certeza geográfica para que las inversiones sean inteligentes, seguras y aprovechen el potencial real de cada mercado.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+            <div class="valor-container">
+                <div class="valor-item">
+                    <h4>EL CIUDADANO ENTIENDE.</h4>
+                    <p>Transformamos datos complejos en información accesible para facilitar la comprensión de la realidad social y territorial.</p>
+                </div>
+                <div class="valor-item">
+                    <h4>EL POLÍTICO CORRIGE.</h4>
+                    <p>Ofrecemos la inteligencia precisa para focalizar políticas públicas y presupuestos, resolviendo problemas donde realmente se originan.</p>
+                </div>
+                <div class="valor-item">
+                    <h4>EL EMPRENDEDOR DECIDE.</h4>
+                    <p>Brindamos certeza geográfica para que las inversiones sean inteligentes, seguras y aprovechen el potencial real de cada mercado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <section class="seccion-mapas seccion-impacto">
-        <div class="container">
-            <div class="gancho-impacto">
-                ¡LA PRUEBA INNEGABLE DE LA CONSECUENCIA!
-                <br>MUNICIPIOS CON 60% DE ABSTENCIÓN SON HOY LOS MÁS INSEGUROS.
-                <span>Así se ve la Ciudad de México y el Estado de México cuando el ciudadano se ausenta... y el territorio se rompe.</span>
-            </div>
-            
-            <p class="bloque-crisis">
-                El abstencionismo es el partido más grande de México. Más del 40% de los ciudadanos de Ciudad de México y Estado de México no votaron.
-                <br>Y esas mismas zonas concentran los mayores índices de delitos. ¿Es casualidad o es consecuencia?
-            </p>
+    <section class="seccion-mapas seccion-impacto">
+        <div class="container">
+            <div class="gancho-impacto">
+                ¡LA PRUEBA INNEGABLE DE LA CONSECUENCIA!
+                <br>MUNICIPIOS CON 60% DE ABSTENCIÓN SON HOY LOS MÁS INSEGUROS.
+                <span>Así se ve la Ciudad de México y el Estado de México cuando el ciudadano se ausenta... y el territorio se rompe.</span>
+            </div>
+            
+            <p class="bloque-crisis">
+                El abstencionismo es el partido más grande de México. Más del 40% de los ciudadanos de Ciudad de México y Estado de México no votaron.
+                <br>Y esas mismas zonas concentran los mayores índices de delitos. ¿Es casualidad o es consecuencia?
+            </p>
 
-            <div class="instrucciones-mapa">
-                <h3>INSTRUCCIONES DEL DEMO</h3>
-                <p>
-                    IMPORTANTE: Este es un DEMO PÚBLICO LIMITADO que muestra el poder del análisis a nivel de un solo municipio del Estado de México y una alcaldía de la Ciudad de México. Los datos completos están disponibles únicamente en el Demo Privado.
-                </p>
-                <ul>
-                    <li>PAN: Haz clic y arrastra para moverte.</li>
-                    <li>ZOOM: Usa la rueda del ratón o el botón +/-.</li>
-                    <li>DATOS: Pasa el cursor sobre los polígonos para ver las estadísticas clave.</li>
-                </ul>
-            </div>
+            <div class="instrucciones-mapa">
+                <h3>INSTRUCCIONES DEL DEMO</h3>
+                <p>
+                    IMPORTANTE: Este es un DEMO PÚBLICO LIMITADO que muestra el poder del análisis a nivel de un solo municipio del Estado de México y una alcaldía de la Ciudad de México. Los datos completos están disponibles únicamente en el Demo Privado.
+                </p>
+                <ul>
+                    <li>PAN: Haz clic y arrastra para moverte.</li>
+                    <li>ZOOM: Usa la rueda del ratón o el botón +/-.</li>
+                    <li>DATOS: Pasa el cursor sobre los polígonos para ver las estadísticas clave.</li>
+                </ul>
+            </div>
 
-            <div class="mapa-tabs">
-                <button class="mapa-tab-btn active" data-tab="delito" onclick="changeMap('delito')">1. INCIDENCIA DELICTIVA (AMPLITUD)</button>
-                <button class="mapa-tab-btn" data-tab="abstencionismo" onclick="changeMap('abstencionismo')">2. ELECCIÓN PRESIDENCIAL (PROFUNDIDAD)</button>
-            </div>
-            
-            <div id="delito" class="mapa-content active">
-                <div class="nota-mapa">
-                    MAPA 1: Polígonos municipales (DEMO). Descubre el delito más y menos cometido y el total de delitos en tu municipio (DELITO VS. TERRITORIO).
-                </div>
-                <iframe src="Incidencia_delictiva_agosto2025.html" class="mapa-iframe" title="Mapa de Incidencia Delictiva"></iframe>
-            </div>
+            <div class="mapa-tabs">
+                <button class="mapa-tab-btn active" data-tab="delito" onclick="changeMap('delito')">1. INCIDENCIA DELICTIVA (AMPLITUD)</button>
+                <button class="mapa-tab-btn" data-tab="abstencionismo" onclick="changeMap('abstencionismo')">2. ELECCIÓN PRESIDENCIAL (PROFUNDIDAD)</button>
+            </div>
+            
+            <div id="delito" class="mapa-content active">
+                <div class="nota-mapa">
+                    MAPA 1: Polígonos municipales (DEMO). Descubre el delito más y menos cometido y el total de delitos en tu municipio (DELITO VS. TERRITORIO).
+                </div>
+                <iframe src="Incidencia_delictiva_agosto2025.html" class="mapa-iframe" title="Mapa de Incidencia Delictiva"></iframe>
+            </div>
 
-            <div id="abstencionismo" class="mapa-content">
-                <div class="nota-mapa">
-                    MAPA 2: Análisis a nivel de sección electoral (DEMO). Revela la correlación entre la abstención y la inseguridad (ABSTENCIÓN VS. CONSECUENCIA)
-                </div>
-                <iframe src="Elección_presidencial_2024.html" class="mapa-iframe" title="Mapa de Elección Presidencial"></iframe>
-            </div>
-        </div>
-    </section>
+            <div id="abstencionismo" class="mapa-content">
+                <div class="nota-mapa">
+                    MAPA 2: Análisis a nivel de sección electoral (DEMO). Revela la correlación entre la abstención y la inseguridad (ABSTENCIÓN VS. CONSECUENCIA)
+                </div>
+                <iframe src="Elección_presidencial_2024.html" class="mapa-iframe" title="Mapa de Elección Presidencial"></iframe>
+            </div>
+        </div>
+    </section>
 
-    <section class="seccion-cta">
-        <div class="container">
-            <h2>DONDE EL CIUDADANO VUELVE A INVOLUCRARSE, VUELVE LA SEGURIDAD, LA INVERSIÓN Y LA ESPERANZA.</h2>
-            
-            <div class="bloque-cobertura">
-                <h4>LA COBERTURA TOTAL Y LA PROFUNDIDAD DEL ANÁLISIS ESTÁ DISPONIBLE YA:</h4>
-                <p style="font-size: 1.1em;">
-                    La plataforma Politeia CMAPS ofrece el análisis geográfico completo, que incluye:
-                </p>
-                <ul style="list-style: disc; padding-left: 25px; text-align: left;">
-                    <li><strong>Análisis Electoral Detallado:</strong> Conteos por partido, por coalición, identificación de primeras y segundas fuerzas por sección, y porcentajes de votos y abstencionismo.</li>
-                    <li><strong>Datos de Seguridad y Sociodemográficos:</strong> Cruce con incidencia delictiva, censo, bases de datos de emergencias y socioeconómicos.</li>
-                </ul>
-                <p style="font-size: 1.2em; margin-top: 20px;">
-                    COBERTURA ACTUAL: <strong>Estado de México, Ciudad de México, Querétaro, Hidalgo, Chiapas, Quintana Roo y Mérida.</strong>
-                </p>
-            </div>
+    <section class="seccion-cta">
+        <div class="container">
+            <h2>DONDE EL CIUDADANO VUELVE A INVOLUCRARSE, VUELVE LA SEGURIDAD, LA INVERSIÓN Y LA ESPERANZA.</h2>
+            
+            <div class="bloque-cobertura">
+                <h4>LA COBERTURA TOTAL Y LA PROFUNDIDAD DEL ANÁLISIS ESTÁ DISPONIBLE YA:</h4>
+                <p style="font-size: 1.1em;">
+                    La plataforma Politeia CMAPS ofrece el análisis geográfico completo, que incluye:
+                </p>
+                <ul style="list-style: disc; padding-left: 25px; text-align: left;">
+                    <li><strong>Análisis Electoral Detallado:</strong> Conteos por partido, por coalición, identificación de primeras y segundas fuerzas por sección, y porcentajes de votos y abstencionismo.</li>
+                    <li><strong>Datos de Seguridad y Sociodemográficos:</strong> Cruce con incidencia delictiva, censo, bases de datos de emergencias y socioeconómicos.</li>
+                </ul>
+                <p style="font-size: 1.2em; margin-top: 20px;">
+                    COBERTURA ACTUAL: <strong>Estado de México, Ciudad de México, Querétaro, Hidalgo, Chiapas, Quintana Roo y Mérida.</strong>
+                </p>
+            </div>
 
-            <a href="tel:5589342136" class="btn-cta">¡AGENDA TU SESIÓN ESTRATÉGICA!</a>
-        </div>
-    </section>
+            <a href="tel:5589342136" class="btn-cta">¡AGENDA TU SESIÓN ESTRATÉGICA!</a>
+        </div>
+    </section>
 
-    <footer>
-        <div class="container">
-            <p>© 2025 Politeia CMAPS. Todos los derechos reservados.</p>
-            <p>
-                Contacto: 
-                <strong>
-                    Tel: <a href="tel:5589342136">5589342136</a> 
-                    | 
-                    Email: <a href="mailto:politeiacmaps@gmail.com">politeiacmaps@gmail.com</a>
-                </strong>
-            </p>
-        </div>
-    </footer>
+    <footer>
+        <div class="container">
+            <p>© 2025 Politeia CMAPS. Todos los derechos reservados.</p>
+            <p>
+                Contacto: 
+                <strong>
+                    Tel: <a href="tel:5589342136" style="color: inherit; text-decoration: none;">5589342136</a> 
+                    | 
+                    Email: <a href="mailto:politeiacmaps@gmail.com" style="color: inherit; text-decoration: none;">contacto@cmaps.mx</a>
+                </strong>
+            </p>
+        </div>
+    </footer>
 
-    <script>
-        function changeMap(targetId) {
-            const tabs = document.querySelectorAll('.mapa-tab-btn');
-            const contents = document.querySelectorAll('.mapa-content');
-            
-            // Desactivar todos
-            tabs.forEach(t => t.classList.remove('active'));
-            contents.forEach(c => c.classList.remove('active'));
-            
-            // Activar el objetivo
-            document.querySelector(`.mapa-tab-btn[data-tab="${targetId}"]`).classList.add('active');
-            document.getElementById(targetId).classList.add('active');
-        }
-    </script>
+    <script>
+        function changeMap(targetId) {
+            const tabs = document.querySelectorAll('.mapa-tab-btn');
+            const contents = document.querySelectorAll('.mapa-content');
+            
+            // Desactivar todos
+            tabs.forEach(t => t.classList.remove('active'));
+            contents.forEach(c => c.classList.remove('active'));
+            
+            // Activar el objetivo
+            document.querySelector(`.mapa-tab-btn[data-tab="${targetId}"]`).classList.add('active');
+            document.getElementById(targetId).classList.add('active');
+        }
+    </script>
 </body>
 </html>
