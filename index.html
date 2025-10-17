@@ -107,7 +107,6 @@
         /* ITEMS DE VALOR */
         .valor-container {
             display: flex;
-            /* **SOLUCIÓN FLEXBOX** - permite que el 3er elemento salte de línea */
             flex-wrap: wrap; 
             justify-content: space-between;
             gap: 30px;
@@ -122,17 +121,16 @@
             background-color: var(--color-fondo-claro);
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
             border-radius: 5px;
-            text-align: left; /* Alineación por defecto para todos */
+            text-align: left; 
         }
         
         /* REGLA CLAVE: CENTRAR LA TERCERA CAJA */
         .valor-item:nth-child(3) {
-            /* FUERZA LA CAJA A OCUPAR TODA UNA FILA Y LUEGO SE CENTRA */
-            flex-basis: 100%; /* Ocupa el 100% de la fila */
-            width: 30%; /* Le devuelve su ancho original */
-            margin: 0 auto; /* Centra el bloque en el 100% de espacio disponible */
-            text-align: center; /* Centra el texto DENTRO de la caja */
-            margin-top: 30px; /* Separación de las dos cajas de arriba */
+            flex-basis: 100%; 
+            width: 30%; 
+            margin: 0 auto; 
+            text-align: center; 
+            margin-top: 30px; 
         }
         
         .valor-item h4 {
@@ -351,7 +349,7 @@
             font-size: 1em;
         }
         
-        /* RESPONSIVE BÁSICO */
+        /* RESPONSIVE CSS - FIX PARA EL CELULAR */
         @media (max-width: 900px) {
             .valor-container {
                 flex-direction: column;
@@ -373,6 +371,11 @@
                 flex-basis: 90%; /* Ajuste responsive */
                 width: 90%;
             }
+            
+            /* **SOLUCIÓN AL CUADRO BLANCO** - OCULTAR LA NOTA DEL MAPA EN MÓVILES */
+            .nota-mapa {
+                display: none !important; 
+            }
         }
     </style>
 </head>
@@ -392,11 +395,10 @@
             
             <div class="bloque-experiencia">
                 <h3>+15 AÑOS DE EXPERIENCIA CONDUCIENDO LA ESTRATEGIA</h3>
-                <p>Fundado en 2008, nuestro equipo ha liderado proyectos de Cartografía y Sistemas de Información Geográfica (GIS)** de gran escala y precisión. Nuestra trayectoria incluye:</p>
+                <p>Fundado en **2008**, nuestro equipo ha liderado proyectos de **Cartografía y Sistemas de Información Geográfica (GIS)** de gran escala y precisión. Nuestra trayectoria incluye:</p>
                 <ul>
-                    <li>La modernización catastral en diversos municipios de la Republica Mexicana.</li>
-                    <li>Actualización de cartografía y redes de banda ancha en Estados Unidos (proyectos multinacionales de GIS).</li>
-                    <li>La creación de un robusto GIS electoral en México con distritos, secciones, datos históricos, censo, incidencias de delitos y bases de datos de emergencias.</li>
+                    <li>El diseño de redes de banda ancha en **Estados Unidos** (proyectos multinacionales de GIS).</li>
+                    <li>La creación de un robusto GIS electoral en México con **distritos, secciones, datos históricos, censo, incidencias de delitos y bases de datos de emergencias.**</li>
                 </ul>
                 <p>Esta experiencia en el procesamiento de información sociodemográfica, histórica y de seguridad es lo que nos condujo a desarrollar Politeia CMAPS: la herramienta definitiva para entender y reconstruir el territorio.</p>
             </div>
@@ -406,15 +408,15 @@
             <div class="valor-container">
                 <div class="valor-item">
                     <h4>EL CIUDADANO ENTIENDE.</h4>
-                    <p>Transformamos datos complejos en información accesible para facilitar la comprensión de la realidad social y territorial.</p>
+                    <p>Transformamos **datos complejos** en información accesible para facilitar la comprensión de la realidad social y territorial.</p>
                 </div>
                 <div class="valor-item">
                     <h4>EL POLÍTICO CORRIGE.</h4>
-                    <p>Ofrecemos la inteligencia precisa para focalizar políticas públicas y presupuestos, resolviendo problemas donde realmente se originan.</p>
+                    <p>Ofrecemos la **inteligencia precisa** para focalizar políticas públicas y presupuestos, resolviendo problemas donde realmente se originan.</p>
                 </div>
                 <div class="valor-item">
                     <h4>EL EMPRENDEDOR DECIDE.</h4>
-                    <p>Brindamos certeza geográfica para que las inversiones sean inteligentes, seguras y aprovechen el potencial real de cada mercado.</p>
+                    <p>Brindamos **certeza geográfica** para que las inversiones sean inteligentes, seguras y aprovechen el potencial real de cada mercado.</p>
                 </div>
             </div>
         </div>
@@ -424,24 +426,24 @@
         <div class="container">
             <div class="gancho-impacto">
                 ¡LA PRUEBA INNEGABLE DE LA CONSECUENCIA!
-                <br>MUNICIPIOS CON 60% DE ABSTENCIÓN SON HOY LOS MÁS INSEGUROS.
+                <br>MUNICIPIOS CON **60% DE ABSTENCIÓN** SON HOY LOS MÁS INSEGUROS.
                 <span>Así se ve la Ciudad de México y el Estado de México cuando el ciudadano se ausenta... y el territorio se rompe.</span>
             </div>
             
             <p class="bloque-crisis">
-                El ABSTENCIONISMO es el partido más grande de México. Más del 40% de los ciudadanos de CDMX y Edomex no votaron.
-                <br>Y esas mismas zonas concentran los mayores índices de delitos. ¿Es casualidad o es consecuencia?
+                El **abstencionismo es el partido más grande de México**. Más del 40% de los ciudadanos de CDMX y Edomex no votaron.
+                <br>Y esas mismas zonas concentran los mayores índices de delitos. **¿Es casualidad o es consecuencia?**
             </p>
 
             <div class="instrucciones-mapa">
-                <h3>INSTRUCCIONES DEL DEMO</h3>
+                <h3>INSTRUCCIONES Y ÉNFASIS DEL DEMO</h3>
                 <p>
-                    IMPORTANTE: Este es un DEMO PÚBLICO LIMITADO que muestra el poder del análisis a nivel de un solo municipio (EDOMEX) y una alcaldía (CDMX). Los datos completos están disponibles únicamente en el Demo Privado.
+                    **IMPORTANTE:** Este es un **DEMO PÚBLICO LIMITADO** que muestra el poder del análisis a nivel de un solo **municipio (EDOMEX)** y una **alcaldía (CDMX)**. Los datos completos están disponibles únicamente en el Demo Privado.
                 </p>
                 <ul>
-                    <li>PAN: Haz clic y arrastra para moverte.</li>
-                    <li>ZOOM: Usa la rueda del ratón o el botón +/-.</li>
-                    <li>DATOS: Pasa el cursor sobre los polígonos para ver las estadísticas clave.</li>
+                    <li>**PAN:** Haz clic y arrastra para moverte.</li>
+                    <li>**ZOOM:** Usa la rueda del ratón o el botón +/-.</li>
+                    <li>**DATOS:** Pasa el cursor sobre los polígonos para ver las estadísticas clave.</li>
                 </ul>
             </div>
 
@@ -452,14 +454,14 @@
             
             <div id="delito" class="mapa-content active">
                 <div class="nota-mapa">
-                    MAPA 1: Polígonos municipales (DEMO). Descubre el delito más y menos cometido en Nezahualcóyotl (DELITO VS. TERRITORIO).
+                    **MAPA 1:** Polígonos municipales (DEMO). Descubre el delito más y menos cometido en tu municipio **(DELITO VS. TERRITORIO)**.
                 </div>
                 <iframe src="Incidencia_delictiva_agosto2025.html" class="mapa-iframe" title="Mapa de Incidencia Delictiva"></iframe>
             </div>
 
             <div id="abstencionismo" class="mapa-content">
                 <div class="nota-mapa">
-                    MAPA 2: Análisis a nivel de sección electoral (DEMO) de la alcaldía de Iztacalco y el municipio de Nezahualcóyotl. Revela la correlación entre la abstención y la inseguridad (ABSTENCIÓN VS. CONSECUENCIA).
+                    **MAPA 2:** Análisis a nivel de sección electoral (DEMO). Revela la correlación entre la abstención y la inseguridad **(ABSTENCIÓN VS. CONSECUENCIA)**.
                 </div>
                 <iframe src="Elección_presidencial_2024.html" class="mapa-iframe" title="Mapa de Elección Presidencial"></iframe>
             </div>
@@ -476,11 +478,11 @@
                     La plataforma Politeia CMAPS ofrece el análisis geográfico completo, que incluye:
                 </p>
                 <ul style="list-style: disc; padding-left: 25px; text-align: left;">
-                    <li><strong>Análisis Electoral Detallado:</strong> Conteos por partido, por coalición, identificación de primeras y segundas fuerzas por sección, y porcentajes de votos y abstencionismo.</li>
+                    <li><strong>Análisis Electoral Detallado:</strong> Conteos por partido, por coalición, identificación de primeras y segundas fuerzas por sección, y **porcentajes de votos y abstencionismo.**</li>
                     <li><strong>Datos de Seguridad y Sociodemográficos:</strong> Cruce con incidencia delictiva, censo, bases de datos de emergencias y socioeconómicos.</li>
                 </ul>
                 <p style="font-size: 1.2em; margin-top: 20px;">
-                    COBERTURA ACTUAL: <strong>Estado de México, Ciudad de México, Querétaro, Hidalgo, Chiapas, Quintana Roo y Mérida.</strong>
+                    **COBERTURA ACTUAL:** <strong>Estado de México, Ciudad de México, Querétaro, Hidalgo, Chiapas, Quintana Roo y Mérida.</strong>
                 </p>
             </div>
 
@@ -511,11 +513,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
