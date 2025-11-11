@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Politeia CMAPS: Inteligencia Territorial Ciudadana | La Prueba Innegable</title>
+    <title>Politeia CMAPS: Inteligencia Territorial Ciudadana | Score CMAPS (0-300)</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
             --color-azul-fuerte: #01306C; 
-            --color-azul-header: #0c3469; /* COLOR ACTUALIZADO: Azul más claro y vibrante */
+            --color-azul-header: #0c3469; 
             --color-rojo-impacto: #E30000; 
             --color-naranja-cta: #FF6600; 
             --color-fondo-claro: #f8f8f8; 
@@ -32,17 +32,33 @@
             margin: 0 auto;
             padding: 20px;
         }
+        
+        /* -- NUEVOS ESTILOS PARA EL LAYOUT DE COLUMNAS -- */
+        .row-flex {
+            display: flex;
+            flex-wrap: wrap; /* Permite que las columnas se apilen en móvil */
+            align-items: center;
+        }
+        .col-50 {
+            width: 100%; /* Por defecto 100% en móvil */
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        @media (min-width: 900px) {
+            .col-50 {
+                width: 50%; /* 50% en escritorio */
+            }
+        }
 
-        /* HEADER (AZUL DE IMPACTO: #2f7eab) */
-        header {
+        /* -- HERO SECTION (DIAL DE RIESGO) -- */
+        .seccion-hero {
             background-color: var(--color-azul-header); 
             color: white;
-            padding: 40px 0;
-            text-align: center;
+            padding: 80px 0;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
-        header h1 {
+        .seccion-hero h1 {
             font-family: 'Roboto Condensed', sans-serif;
             font-size: 3em;
             margin: 5px 0;
@@ -51,28 +67,39 @@
             text-transform: uppercase;
         }
         
-        header p {
+        .seccion-hero h2 {
             font-size: 1.6em;
             font-weight: 300;
             margin-top: 5px;
             color: #ccc;
         }
-
-        .logo {
-            content: url("logo_fondo_azul.jpg"); 
-            max-height: 90px;
-            display: inline-block;
-            margin-bottom: 25px;
+        .seccion-hero img {
+            max-width: 85%;
+            height: auto;
+            display: block;
+            margin: 30px auto 0 auto;
         }
-        
-        /* SECCIÓN VALOR Y EXPERIENCIA */
-        .seccion-trayectoria {
+        .btn-get-started {
+            background-color: var(--color-rojo-impacto);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 700;
+            display: inline-block;
+            margin-top: 20px;
+            font-family: 'Roboto Condensed', sans-serif;
+            text-transform: uppercase;
+        }
+
+        /* -- SECCIÓN VALOR CMAPS (NUEVA TRAYECTORIA) -- */
+        .seccion-valor-cmaps {
             background-color: white;
-            padding: 60px 0 40px 0;
+            padding: 80px 0;
             text-align: center;
         }
 
-        .seccion-trayectoria h2 {
+        .seccion-valor-cmaps h2 {
             color: var(--color-azul-fuerte);
             font-family: 'Roboto Condensed', sans-serif;
             font-size: 2.6em;
@@ -81,67 +108,35 @@
             font-weight: 900;
         }
         
-        /* BLOQUE DE EXPERIENCIA */
-        .bloque-experiencia {
-            background-color: var(--color-fondo-claro);
-            border-radius: 8px;
-            padding: 30px;
-            margin: 40px auto 50px auto;
-            max-width: 900px;
-            text-align: left;
-            border-left: 6px solid var(--color-naranja-cta);
-        }
-
-        .bloque-experiencia h3 {
-            /* Título modificado para sonar más impactante */
-            color: var(--color-azul-fuerte);
+        .seccion-valor-cmaps h3 {
+            color: var(--color-rojo-impacto);
             font-size: 1.8em;
-            margin-top: 0;
             font-family: 'Roboto Condensed', sans-serif;
             font-weight: 700;
+            margin-top: 0;
+            text-align: left;
         }
-
-        .bloque-experiencia p {
+        .seccion-valor-cmaps ul {
+            list-style: none;
+            padding-left: 0;
+            text-align: left;
+        }
+        .seccion-valor-cmaps li {
+            margin-bottom: 15px;
             font-size: 1.1em;
         }
-        
-        /* ITEMS DE VALOR */
-        .valor-container {
-            display: flex;
-            flex-wrap: wrap; 
-            justify-content: space-between;
-            gap: 30px;
-            margin-top: 40px;
+        .seccion-valor-cmaps strong.key-point {
+            color: var(--color-azul-fuerte);
+        }
+        .seccion-valor-cmaps .imagen-rigor {
+            max-width: 100%;
+            height: auto;
+            border: 3px solid var(--color-azul-fuerte);
+            border-radius: 8px;
+            display: block;
+            margin: 0 auto;
         }
 
-        .valor-item {
-            flex-basis: 30%;
-            min-width: 250px;
-            padding: 25px;
-            border-bottom: 5px solid var(--color-rojo-impacto);
-            background-color: var(--color-fondo-claro);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            text-align: left; 
-        }
-        
-        /* REGLA CLAVE: CENTRAR LA TERCERA CAJA (EL EMPRENDEDOR) */
-        .valor-item:nth-child(3) {
-            flex-basis: 100%; 
-            width: 30%; 
-            margin: 0 auto; 
-            text-align: center; 
-            margin-top: 30px; 
-        }
-        
-        .valor-item h4 {
-            font-family: 'Roboto Condensed', sans-serif;
-            color: var(--color-azul-fuerte);
-            font-size: 1.5em;
-            margin-top: 0;
-            font-weight: 900;
-        }
-        
         /* SECCIÓN DE IMPACTO (ROJO) */
         .seccion-impacto {
             background-color: var(--color-fondo-claro);
@@ -350,17 +345,20 @@
             font-size: 1em;
         }
         
-        /* RESPONSIVE CSS - FIX PARA EL CELULAR Y CAJAS */
+        /* RESPONSIVE CSS */
         @media (max-width: 900px) {
-            .valor-container {
-                flex-direction: column;
-                align-items: center;
+             .col-50 {
+                width: 100%; 
+                padding: 10px;
             }
-            .valor-item {
-                flex-basis: 90%;
+            .seccion-hero h1 {
+                font-size: 2.2em;
             }
-            .gancho-impacto h1 {
-                font-size: 1.8em;
+            .seccion-hero h2 {
+                font-size: 1.3em;
+            }
+            .gancho-impacto {
+                 font-size: 1.8em;
             }
             .mapa-content {
                 height: 450px;
@@ -368,12 +366,6 @@
             .btn-cta {
                 font-size: 1.8em;
             }
-            .valor-item:nth-child(3) {
-                flex-basis: 90%; /* Ajuste responsive */
-                width: 90%;
-            }
-            
-            /* **SOLUCIÓN AL CUADRO BLANCO** - OCULTAR LA NOTA DEL MAPA EN MÓVILES */
             .nota-mapa {
                 display: none !important; 
             }
@@ -382,48 +374,46 @@
 </head>
 <body>
 
-    <header>
+    <section class="seccion-hero">
         <div class="container">
-            <img class="logo" alt="Logo de Politeia CMAPS">
-            <h1>POLITEIA CMAPS: INTELIGENCIA TERRITORIAL CIUDADANA</h1>
-            <p>NO VEAS EL PROBLEMA, REDEFINE EL ENFOQUE</p>
-        </div>
-    </header>
-
-    <section class="seccion-trayectoria">
-        <div class="container">
-            <h2>NUESTRA TRAYECTORIA Y LA GÉNESIS DEL PRODUCTO</h2>
-            
-            <div class="bloque-experiencia">
-                <h3>LA CULMINACIÓN DE +15 AÑOS DE INTELIGENCIA GEOGRÁFICA Y ESTRATEGIA.</h3>
-                <p>Desde nuestra fundación en 2008, hemos dedicado más de una década y media a la creación, integración y corrección de Sistemas de Información Geográfica (GIS) a gran escala y precisión milimétrica. Nuestra experiencia no se basa en teoría, sino en proyectos concretos que han redefinido la toma de decisiones:</p>
-                <ul>
-                    <li>La Plataforma GIS Electoral-Seguridad en México: Desarrollamos un GIS robusto y temático que integra distritos, secciones, datos censales (INEGI), registros históricos y bases de datos de, incidencia delictiva y acoso sexual en estados clave.</li>
-                    <li>Ingeniería de Red Multinacional: Lideramos proyectos de actualización y rediseño cartográfico para redes de banda ancha en diversas ciudades de E.E.U.U., demostrando nuestra capacidad para gestionar datos de infraestructura crítica a nivel internacional.</li>
-                </ul>
-                <p>Esta trayectoria sin precedentes es el cimiento de Politeia CMAPS: el mapa que no solo muestra la realidad, sino que te entrega la inteligencia definitiva para entender y reconstruir el territorio.</p>
-            </div>
-            
-            <h3>No vendemos datos. Vendemos entendimiento.</h3>
-
-            <div class="valor-container">
-                <div class="valor-item">
-                    <h4>EL CIUDADANO ENTIENDE.</h4>
-                    <p>Transformamos datos complejos en información accesible para facilitar la comprensión de la realidad social y territorial.</p>
+            <div class="row-flex">
+                <div class="col-50">
+                    <h1>POLITEIA CMAPS: La Plataforma Geoespacial que Cuantifica la Amenaza Estructural.</h1>
+                    <h2>SCORE CMAPS (0-300): El KPI Definitivo para la Defensa Estratégica y la Priorización de Riesgos.</h2>
+                    <a href="#contacto" class="btn-get-started">Solicitar Acceso al Dato</a>
                 </div>
-                <div class="valor-item">
-                    <h4>EL POLÍTICO CORRIGE.</h4>
-                    <p>Ofrecemos la inteligencia precisa para focalizar políticas públicas y presupuestos, resolviendo problemas donde realmente se originan.</p>
-                </div>
-                <div class="valor-item">
-                    <h4>EL EMPRENDEDOR DECIDE.</h4>
-                    <p>Brindamos certeza geográfica para que las inversiones sean inteligentes, seguras y aprovechen el potencial real de cada mercado.</p>
+                <div class="col-50">
+                    <img src="assets/img/dial_riesgo_cmaps.png" alt="Dial de Riesgo CMAPS 0-300">
                 </div>
             </div>
         </div>
-    </section>
+    </section><section id="about" class="seccion-valor-cmaps">
+        <div class="container">
 
-    <section class="seccion-mapas seccion-impacto">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <h2>RIGOR Y VALOR</h2>
+                <p style="font-size: 1.4em; color: var(--color-texto-principal);">El Dato Inquebrantable para la Acción Estratégica.</p>
+            </div>
+
+            <div class="row-flex">
+                <div class="col-50">
+                    <img src="assets/img/imagen_rigor.png" class="imagen-rigor" alt="Imagen de Rigor Analítico">
+                </div>
+                <div class="col-50">
+                    <h3>Defensa Patrimonial basada en la Falla Estructural.</h3>
+                    <ul>
+                        <li><strong class="key-point">IRSO a Nivel Manzana:</strong> Acceda a la única plataforma que fusiona el riesgo social estructural a nivel de **Manzana** con la predicción electoral.</li>
+                        <li><strong class="key-point">Defensa de Activos:</strong> Priorice y repotencie la seguridad en las zonas **Score 200-300** para mitigar la amenaza a la propiedad y la logística.</li>
+                        <li><strong class="key-point">Sustento Geopolítico:</strong> Tome decisiones estratégicas con datos que cuantifican la **Falla Estructural** del país, más allá de la encuesta.</li>
+                    </ul>
+                    <p style="font-style: italic; color: #555;">
+                        El **SCORE CMAPS** no es un voto; es un indicador de la vulnerabilidad extrema del territorio.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section><section class="seccion-mapas seccion-impacto">
         <div class="container">
             <div class="gancho-impacto">
                 ¡LA PRUEBA INNEGABLE DE LA CONSECUENCIA!
@@ -521,5 +511,3 @@
     </script>
 </body>
 </html>
-
-
