@@ -3,247 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>POLITEIA CMAPS | Motor Científico y Mitigación de Riesgo</title>
+    <title>Politeia CMAPS - Motor de Inteligencia Sistémica</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Estilos Base para Alto Contraste */
-        .bg-primary { background-color: #0d0d0d; } /* Negro Profundo */
-        .text-primary-accent { color: #FACC15; } /* Dorado */
-        .neon-glow { text-shadow: 0 0 4px #FACC15, 0 0 8px #FACC15; }
-        
-        /* Colores de Urgencia y Estrategia */
-        .color-urgency { color: #DC2626; } /* Rojo (Riesgo/Pez Gordo) */
-        .color-strategy { color: #3B82F6; } /* Azul (Potencia/Pez Mediano) */
-
-        /* Estilos de las Pestañas */
-        .tab-button {
-            transition: all 0.3s ease;
+        /* Estilos personalizados para un mejor contraste y look ejecutivo */
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .tab-button.active {
+            border-bottom: 4px solid #F97316; /* Color Naranja, corporativo */
+            color: #1F2937; /* Gris oscuro para el texto activo */
             font-weight: 700;
         }
-        .tab-active-vision {
-            border-bottom: 3px solid #DC2626; /* Rojo Urgencia */
-            color: #DC2626; 
-        }
-        .tab-active-motor {
-            border-bottom: 3px solid #3B82F6; /* Azul Estrategia */
-            color: #3B82F6; 
-        }
-        .tab-active-manzana {
-            border-bottom: 3px solid #FACC15; /* Dorado Precisión */
-            color: #FACC15; 
-        }
-
-        /* Contenedor de Demos */
-        .iframe-container {
-            width: 100%;
-            height: 70vh; /* Altura de la vista para demos */
-            min-height: 500px;
-        }
-        
+        /* Color principal, similar a un azul/gris oscuro corporativo */
+        .bg-politeia-dark { background-color: #1F2937; }
+        .text-politeia-orange { color: #F97316; }
     </style>
-</head>
-
-<body class="bg-gray-900 text-white font-sans antialiased">
-
-    <header class="bg-black shadow-2xl py-8 border-b-4 border-yellow-400/50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 class="text-5xl font-extrabold tracking-tighter">
-                POLITEIA <span class="text-primary-accent neon-glow">CMAPS</span>
-            </h1>
-            <p class="mt-2 text-2xl font-light text-gray-300">
-                La <span class="color-strategy font-bold">Inteligencia Táctica</span> Nace en el <span class="text-primary-accent font-bold">Motor de Datos Electoral Histórico</span>.
-            </p>
-        </div>
-    </header>
-
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-16">
-
-        <section class="mb-16 p-8 bg-gray-800 rounded-xl shadow-2xl border-l-4 border-blue-400">
-            <h2 class="text-4xl font-black mb-6 flex items-center">
-                <span class="text-primary-accent mr-3">🔬</span> Nuestro Rigor: El Único Argumento de Venta
-            </h2>
-            <div class="flex flex-col lg:flex-row items-start lg:space-x-12">
-                <div class="lg:w-2/3">
-                    <p class="text-xl text-gray-200 leading-relaxed mb-4">
-                        Ante la inversión de alto riesgo, no vendemos una métrica; vendemos la **certeza científica**. Nuestra metodología es la **única** que fusiona, valida y comprueba la volatilidad del voto en sus elementos más pequeños.
-                    </p>
-                    <p class="text-xl text-primary-accent font-semibold mb-6">
-                        El Score 0-300 (IRSO) es el subproducto de **Mitigación de Riesgo** accionado por esta base de datos inexpugnable.
-                    </p>
-                    <div class="p-4 bg-gray-900 border-l-4 border-red-600 rounded-lg">
-                         <p class="text-sm italic text-gray-400">
-                            **Principio Rector:** "Hacer, Comprobar que Funcione, y Luego Avanzar". No existe el "parche de parches" en nuestra ciencia.
-                        </p>
-                    </div>
-                </div>
-                <div class="lg:w-1/3 mt-8 lg:mt-0 flex justify-center">
-                    <img src="imagen_rigor.png" alt="Diagrama de Rigor Metodológico de Datos CMAPS" class="w-full max-w-sm rounded-lg shadow-xl border border-gray-700">
-                </div>
-            </div>
-        </section>
-
-        <section class="mt-12">
-            
-            <div class="border-b-2 border-gray-700 mb-8">
-                <nav class="-mb-px flex space-x-4 sm:space-x-8" id="tab-navigation">
-                    <button class="tab-button py-4 px-2 sm:px-4 text-base sm:text-lg text-gray-400 tab-active-vision" data-tab="tab-vision">
-                        <span class="color-urgency">I. MITIGACIÓN (Pez Gordo)</span>
-                    </button>
-                    <button class="tab-button py-4 px-2 sm:px-4 text-base sm:text-lg text-gray-400" data-tab="tab-motor">
-                        <span class="color-strategy">II. TÁCTICA (Pez Mediano)</span>
-                    </button>
-                    <button class="tab-button py-4 px-2 sm:px-4 text-base sm:text-lg text-gray-400" data-tab="tab-manzana">
-                        <span class="text-primary-accent">III. QUIRÚRGICA (Pez Pequeño)</span>
-                    </button>
-                </nav>
-            </div>
-
-            <div id="tab-content">
-                
-                <div class="tab-panel" id="tab-vision">
-                    <div class="bg-gray-800 p-8 rounded-xl shadow-2xl border-t-4 border-red-600 grid lg:grid-cols-5 gap-8">
-                        
-                        <div class="lg:col-span-2 space-y-6">
-                            <h3 class="text-3xl font-black color-urgency mb-3">Mitigación de Riesgo Sistémico (ROI)</h3>
-                            
-                            <blockquote class="text-xl italic border-l-4 border-red-600 pl-4 text-gray-200">
-                                "El Score IRSO es el único indicador que <span class="font-bold">protege su inversión</span> a escala nacional. Compra estabilidad, no solo datos."
-                            </blockquote>
-                            
-                            <div class="pt-4 flex items-center space-x-6">
-                                <div class="w-1/2 max-w-[200px]">
-                                    <img src="dial_riesgo_cmaps.png" alt="Gráfico Score IRSO 0-300" class="w-full h-auto shadow-lg">
-                                </div>
-                                <p class="text-sm text-gray-400">
-                                    El Score se presenta como la conclusión ejecutiva. Nuestro demo prueba la granularidad del voto duro, la fuente de esta proyección.
-                                </p>
-                            </div>
-                        </div>
-                        
-                        <div class="lg:col-span-3">
-                            <h4 class="text-xl font-bold mb-3 text-red-400">DEMO ELECTORAL: Granularidad del Voto por Partido (Visión Total)</h4>
-                            <div class="iframe-container border-2 border-red-700 rounded-lg overflow-hidden">
-                                <iframe src="Elección_presidencial_2024.html" 
-                                        sandbox="allow-scripts allow-same-origin" 
-                                        class="w-full h-full" 
-                                        frameborder="0">
-                                </iframe>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tab-panel hidden" id="tab-motor">
-                    <div class="bg-gray-800 p-8 rounded-xl shadow-2xl border-t-4 border-blue-600 grid lg:grid-cols-2 gap-8">
-                        
-                        <div>
-                            <h3 class="text-3xl font-black color-strategy mb-3">Inteligencia Táctica: Control de Riesgo Operativo</h3>
-                            <blockquote class="text-xl italic border-l-4 border-blue-600 pl-4 text-gray-200">
-                                "Vendemos la <span class="font-bold">POTENCIA</span> del Motor para fusionar datos complejos. Dominamos las variables sociales (el 'ruido') que afectan su logística y seguridad."
-                            </blockquote>
-                            <p class="text-gray-300 mt-6">
-                                El Demo Delictivo no es solo un mapa. Es la prueba de que CMAPS domina el entorno social y logístico, asegurando que su operación en campo no falle por variables externas.
-                            </p>
-                        </div>
-                        
-                        <div>
-                            <h4 class="text-xl font-bold mb-3 text-blue-400">DEMO SOCIO-OPERATIVO: Complejidad del Riesgo Social</h4>
-                            <div class="iframe-container border-2 border-blue-700 rounded-lg overflow-hidden">
-                                <iframe src="Incidencia_delictiva_agosto2025.html" 
-                                        sandbox="allow-scripts allow-same-origin" 
-                                        class="w-full h-full" 
-                                        frameborder="0">
-                                </iframe>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tab-panel hidden" id="tab-manzana">
-                     <div class="bg-gray-800 p-8 rounded-xl shadow-2xl border-t-4 border-yellow-600 grid lg:grid-cols-2 gap-8">
-                        
-                        <div>
-                            <h3 class="text-3xl font-black text-primary-accent mb-3">Inteligencia Quirúrgica: El Mapa de Acción de Calle</h3>
-                            <blockquote class="text-xl italic border-l-4 border-yellow-600 pl-4 text-gray-200">
-                                "La precisión por partido a nivel de sección. Es la orden de trabajo para el coordinador: Asigne esfuerzos <span class="font-bold">SÓLO en el GAP electoral rentable.</span>"
-                            </blockquote>
-                            <p class="text-gray-300 mt-6">
-                                Se acabaron los recursos malgastados. Nuestro Motor le dice dónde está el potencial real, permitiendo una asignación de recursos micro-focalizada. Cero ruido, máxima eficiencia.
-                            </p>
-                            <div class="mt-6 text-sm text-gray-500">
-                                *Esta precisión nace del mismo Motor que calcula el Score Sistémico (IRSO).
-                            </div>
-                        </div>
-
-                        <div>
-                            <h4 class="text-xl font-bold mb-3 text-yellow-400">DEMO ELECTORAL QUIRÚRGICO: Iztacalco/Neza (El GAP Rentable)</h4>
-                            <div class="iframe-container border-2 border-yellow-700 rounded-lg overflow-hidden">
-                                <iframe src="Elección_presidencial_2024.html" 
-                                        sandbox="allow-scripts allow-same-origin" 
-                                        class="w-full h-full" 
-                                        frameborder="0">
-                                </iframe>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const tabs = document.querySelectorAll('.tab-button');
-            const panels = document.querySelectorAll('.tab-panel');
-
-            // Función para limpiar clases activas de pestañas
-            function cleanActiveClasses() {
-                tabs.forEach(tab => {
-                    tab.classList.remove('tab-active-vision', 'tab-active-motor', 'tab-active-manzana', 'text-gray-200');
-                    tab.classList.add('text-gray-400');
-                });
-            }
-
-            // Función para cambiar de pestaña
-            function switchTab(targetTab) {
-                // 1. Limpiar todas las clases activas
-                cleanActiveClasses();
-                
-                // 2. Ocultar todos los paneles
-                panels.forEach(panel => {
-                    panel.classList.add('hidden');
-                });
-
-                // 3. Activar la pestaña clickeada y mostrar el panel correspondiente
-                const activeTab = document.querySelector(`[data-tab="${targetTab}"]`);
-                const activePanel = document.getElementById(targetTab);
-                
-                if (activeTab && activePanel) {
-                    activePanel.classList.remove('hidden');
-                    
-                    // Aplicar la clase de estilo específico según la pestaña activa
-                    if (targetTab === 'tab-vision') {
-                        activeTab.classList.add('tab-active-vision');
-                    } else if (targetTab === 'tab-motor') {
-                        activeTab.classList.add('tab-active-motor');
-                    } else if (targetTab === 'tab-manzana') {
-                        activeTab.classList.add('tab-active-manzana');
-                    }
-                    activeTab.classList.remove('text-gray-400');
-                    activeTab.classList.add('text-gray-200'); // Resaltar el texto
-                }
-            }
-
-            // Listener para cada botón de pestaña
-            tabs.forEach(tab => {
-                tab.addEventListener('click', () => {
-                    switchTab(tab.dataset.tab);
-                });
+        // Función para manejar el cambio de pestañas
+        function openTab(tabName) {
+            // Desactivar todos los contenidos de las pestañas
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            // Desactivar todos los botones de las pestañas
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.classList.remove('active');
             });
 
-            // Inicializar al cargar con la primera pestaña activa
-            switchTab('tab-vision'); 
+            // Activar el contenido y el botón de la pestaña seleccionada
+            document.getElementById(tabName).classList.add('active');
+            document.getElementById('btn-' + tabName).classList.add('active');
+        }
+        
+        // Inicializar la primera pestaña al cargar
+        document.addEventListener('DOMContentLoaded', () => {
+            openTab('vision');
         });
     </script>
+</head>
+<body class="bg-gray-100 font-sans">
+
+    <header class="bg-politeia-dark text-white p-6 shadow-xl">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-extrabold tracking-tight">POLITEIA <span class="text-politeia-orange">CMAPS</span></h1>
+            <p class="text-sm font-light uppercase tracking-widest opacity-80">Motor de Inteligencia Sistémica y Mitigación de Riesgo</p>
+        </div>
+    </header>
+    
+    <div class="max-w-7xl mx-auto mt-4 p-4 text-center">
+        <p class="text-lg text-gray-600 font-medium">
+            <span class="font-bold text-politeia-orange">POLITEIA CMAPS</span> &rarr; Rigor &rarr; Score IRSO 0-300 &rarr; ROI
+        </p>
+    </div>
+
+    <main class="max-w-7xl mx-auto bg-white shadow-2xl rounded-lg mt-4 p-6">
+        
+        <div class="border-b border-gray-200">
+            <nav class="flex space-x-4">
+                <button id="btn-vision" onclick="openTab('vision')" class="tab-button py-4 px-4 text-lg text-gray-500 hover:text-gray-700 transition duration-150 ease-in-out focus:outline-none">
+                    I. VISIÓN ESTRATÉGICA
+                </button>
+                <button id="btn-tactica" onclick="openTab('tactica')" class="tab-button py-4 px-4 text-lg text-gray-500 hover:text-gray-700 transition duration-150 ease-in-out focus:outline-none">
+                    II. INTELIGENCIA TÁCTICA
+                </button>
+                <button id="btn-operativo" onclick="openTab('operativo')" class="tab-button py-4 px-4 text-lg text-gray-500 hover:text-gray-700 transition duration-150 ease-in-out focus:outline-none">
+                    III. DETALLE OPERATIVO
+                </button>
+            </nav>
+        </div>
+
+        <div id="vision" class="tab-content active pt-6">
+            <h2 class="text-3xl font-bold mb-4 text-politeia-orange">POLITEIA CMAPS: El Motor de Inteligencia Sistémica</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="md:col-span-2">
+                    <p class="text-lg text-gray-700 mb-6">
+                        <span class="font-extrabold">Venta: Retorno de Inversión (ROI) y Estabilidad.</span> La única plataforma que transforma la data histórica, el GAP y el riesgo social en una métrica única **(Score 0-300)** para dirigir capital y mitigar la incertidumbre nacional. El Score IRSO 0-300 es el subproducto que cuantifica el riesgo derivado de la robustez de Politeia CMAPS.
+                    </p>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Demo Principal: Granularidad del Motor</h3>
+                    <iframe 
+                        src="Elección_presidencial_2024.html" 
+                        class="w-full h-96 border-4 border-gray-300 rounded-lg shadow-inner" 
+                        frameborder="0"
+                        sandbox="allow-scripts allow-same-origin"
+                        title="Demo Granularidad del Score">
+                    </iframe>
+                </div>
+                <div class="space-y-6">
+                    <div class="p-4 bg-gray-50 rounded-lg shadow-md">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-2">Métrica Clave: Score IRSO 0-300</h4>
+                        <img src="dial_riesgo_cmaps.png" alt="Dial de Riesgo CMAPS (Score 0-300)" class="w-full h-auto rounded-md shadow-lg">
+                        <p class="text-sm text-gray-500 mt-2">Cuantifica el Riesgo Integral Socio-Operativo.</p>
+                    </div>
+                    <div class="p-4 bg-gray-50 rounded-lg shadow-md">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-2">Rigor en la Data Histórica</h4>
+                        <img src="imagen_rigor.png" alt="Diagrama de Rigor Científico" class="w-full h-auto rounded-md shadow-lg">
+                        <p class="text-sm text-gray-500 mt-2">La base histórica (2006+) garantiza la solidez del motor.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tactica" class="tab-content pt-6">
+            <h2 class="text-3xl font-bold mb-4 text-politeia-orange">RIGOR CIENTÍFICO: Metodología Comprobable y Auditable</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <p class="text-lg text-gray-700 mb-6">
+                        <span class="font-extrabold">Venta: Optimización de Recursos y Logística.</span> Usamos la data Politeia (Voto x Partido, GAP, Abstención) y la fusionamos con variables operativas (Delito, Drenaje, Internet) en QGIS. Este proceso garantiza la **asignación quirúrgica de recursos de campaña** en los puntos de inflexión. La auditoría metodológica es inmediata.
+                    </p>
+                    <ul class="list-disc list-inside text-gray-600 space-y-2 ml-4">
+                        <li>Integración Geocartográfica (CMAPS).</li>
+                        <li>Fusión de data electoral y socio-operativa.</li>
+                        <li>Detección de puntos de alto impacto (GAP).</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Prueba de Integración Socio-Operativa</h3>
+                    <iframe 
+                        src="Incidencia_delictiva_agosto2025.html" 
+                        class="w-full h-96 border-4 border-gray-300 rounded-lg shadow-inner" 
+                        frameborder="0"
+                        sandbox="allow-scripts allow-same-origin"
+                        title="Demo Incidencia Delictiva">
+                    </iframe>
+                    <p class="text-sm text-gray-500 mt-2">Incidencia Delictiva Agosto 2025: Capacidad para integrar datos complejos.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="operativo" class="tab-content pt-6">
+            <h2 class="text-3xl font-bold mb-4 text-politeia-orange">DATOS EN LA MANZANA: El Voto Duro en la Sección Electoral</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Acceso al Dato Crudo y Análisis</h3>
+                    <iframe 
+                        src="Elección_presidencial_2024.html" 
+                        class="w-full h-96 border-4 border-gray-300 rounded-lg shadow-inner" 
+                        frameborder="0"
+                        sandbox="allow-scripts allow-same-origin"
+                        title="Demo de Sección Electoral">
+                    </iframe>
+                    <p class="text-sm text-gray-500 mt-2">Énfasis en Iztacalco/Neza: Prueba del descenso del dato al nivel de sección electoral.</p>
+                </div>
+                <div>
+                    <p class="text-lg text-gray-700 mb-6">
+                        <span class="font-extrabold">Venta: Precisión para el Mando de Campo.</span> Acceso directo a la base de datos Politeia (Votos x Partido). El demo de Iztacalco/Neza es la prueba de que el dato desciende al nivel de sección electoral, dando al coordinador la **información cruda y sin adornos para la movilización**. El dato no es solo una métrica, es la fuente primaria.
+                    </p>
+                    <blockquote class="border-l-4 border-politeia-orange pl-4 py-2 italic text-gray-600">
+                        "El dato no está adornado, está listo para ser robado y analizado por el mando de campo."
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="max-w-7xl mx-auto mt-8 p-4 text-center text-gray-500 text-sm">
+        &copy; 2025 Politeia CMAPS. Inteligencia de Negocios para la Asignación Estratégica de Capital.
+    </footer>
+
 </body>
 </html>
