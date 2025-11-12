@@ -3,402 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Politeia CMAPS: Inteligencia para la Acción y la Defensa de Activos</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Politeia CMAPS - Inteligencia para la Mitigación de Riesgo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        :root {
-            --color-azul-fuerte: #01306C;
-            --color-azul-header: #0c3469;
-            --color-rojo-impacto: #E30000;
-            --color-naranja-cta: #FF6600;
-            --color-fondo-claro: #f8f8f8;
-            --color-texto-principal: #222;
-            --color-dorado-kpi: #FFD700;
+        /* Estilo para el color de contraste corporativo (Azul oscuro/eléctrico) */
+        .corporate-blue {
+            background-color: #0077b6; /* Un azul de alto impacto */
         }
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            color: var(--color-texto-principal);
-            background-color: white;
-            scroll-behavior: smooth;
+        .text-corporate-blue {
+            color: #0077b6;
         }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        header {
-            background-color: var(--color-azul-header);
-            color: white;
-            padding: 50px 0;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-        header h1 {
-            font-family: 'Roboto Condensed', sans-serif;
-            font-size: 3.2em;
-            margin: 0;
-            font-weight: 900;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            line-height: 1.1;
-        }
-        header p {
-            font-size: 1.8em;
-            font-weight: 300;
-            margin-top: 15px;
-            color: #ccc;
-        }
-        .seccion-rigor {
-            background-color: var(--color-azul-fuerte);
-            padding: 60px 0;
-            color: white;
-            text-align: center;
-        }
-        .seccion-rigor h2 {
-            font-family: 'Roboto Condensed', sans-serif;
-            font-weight: 900;
-            font-size: 2.8em;
-            margin-top: 0;
-            color: white;
-            text-transform: uppercase;
-            margin-bottom: 40px;
-        }
-        .bloque-kpi {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 50px;
-            margin-bottom: 70px;
-            padding: 30px;
-            border: 1px solid var(--color-dorado-kpi);
-            border-radius: 8px;
-            background-color: rgba(0, 0, 0, 0.1);
-        }
-        .kpi-texto {
-            flex-basis: 55%;
-            text-align: left;
-        }
-        .kpi-imagen {
-            flex-basis: 40%;
-            text-align: center;
-        }
-        .kpi-imagen img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-            border: 4px solid var(--color-dorado-kpi);
-        }
-        .kpi-texto h3 {
-            font-family: 'Roboto Condensed', sans-serif;
-            font-weight: 900;
-            font-size: 2.2em;
-            margin-top: 0;
-            color: var(--color-dorado-kpi);
-        }
-        .kpi-texto p {
-            font-size: 1.15em;
-            margin-bottom: 20px;
-        }
-        .kpi-texto strong {
-            color: var(--color-naranja-cta);
-        }
-        .bloque-alcance {
-            background-color: white;
-            color: var(--color-texto-principal);
-            padding: 30px;
-            border-radius: 8px;
-            text-align: left;
-            margin-top: 50px;
-            border-left: 6px solid var(--color-rojo-impacto);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-        .bloque-alcance h4 {
-            color: var(--color-azul-fuerte);
-            font-family: 'Roboto Condensed', sans-serif;
-            font-size: 1.8em;
-            margin-top: 0;
-            font-weight: 900;
-        }
-        .bloque-alcance ul {
-            list-style: disc;
-            padding-left: 20px;
-            font-size: 1.1em;
-        }
-        .bloque-alcance li strong {
-            color: var(--color-rojo-impacto);
-        }
-        .seccion-mapas {
-            background-color: var(--color-fondo-claro);
-            padding: 60px 0;
-            text-align: center;
-        }
-        .seccion-mapas h2 {
-            color: var(--color-azul-fuerte);
-            font-family: 'Roboto Condensed', sans-serif;
-            font-size: 2.6em;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            font-weight: 900;
-        }
-        .map-intro-text {
-            max-width: 900px;
-            margin: 0 auto 30px auto;
-            font-size: 1.2em;
-            font-weight: 400;
-            color: var(--color-texto-principal);
-        }
-        .map-intro-text strong {
-            color: var(--color-rojo-impacto);
-            font-weight: 700;
-        }
-        .mapa-tabs {
-            display: flex;
-            margin-bottom: 20px;
-            border-bottom: 3px solid var(--color-azul-fuerte);
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .mapa-tab-btn {
-            font-family: 'Roboto Condensed', sans-serif;
-            background: none;
-            border: none;
-            padding: 15px 25px;
-            cursor: pointer;
-            font-size: 1.2em;
-            font-weight: 700;
-            color: var(--color-texto-principal);
-            border-bottom: 5px solid transparent;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-        }
-        .mapa-tab-btn:hover {
-            color: var(--color-naranja-cta);
-        }
-        .mapa-tab-btn.active {
-            color: var(--color-rojo-impacto);
-            border-bottom-color: var(--color-rojo-impacto);
-        }
-        .map-content {
-            border: 5px solid var(--color-rojo-impacto);
-            height: 650px;
-            position: relative;
-            overflow: hidden;
-            display: none;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-            border-radius: 8px;
-            margin-bottom: 40px;
-        }
-        .map-content.active {
-            display: block;
-        }
-        .map-iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            display: block;
-        }
-        .seccion-cta {
-            background-color: var(--color-naranja-cta);
-            color: white;
-            padding: 70px 0;
-            text-align: center;
-        }
-        .seccion-cta h2 {
-            font-family: 'Roboto Condensed', sans-serif;
-            font-size: 2.8em;
-            font-weight: 900;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-        .cta-box {
-            background-color: var(--color-rojo-impacto);
-            padding: 40px;
-            border-radius: 10px;
-            max-width: 700px;
-            margin: 30px auto;
-            box-shadow: 0 8px 0 var(--color-azul-fuerte);
-        }
-        .cta-box p {
-            font-size: 1.6em;
-            font-weight: 700;
-            margin-bottom: 20px;
-            line-height: 1.3;
-        }
-        .btn-cta-final {
-            background-color: var(--color-azul-fuerte);
-            color: white;
-            padding: 20px 40px;
-            text-decoration: none;
-            font-size: 1.8em;
-            font-weight: 900;
-            border-radius: 8px;
-            transition: background-color 0.3s ease;
-            display: inline-block;
-            text-transform: uppercase;
-            font-family: 'Roboto Condensed', sans-serif;
-        }
-        .btn-cta-final:hover {
-            background-color: #004085;
-        }
-        .contacto-info {
-            margin-top: 30px;
-            font-size: 1.2em;
-            font-weight: 700;
-        }
-        .contacto-info a {
-            color: white;
-            text-decoration: underline;
-        }
-        footer {
-            background-color: var(--color-azul-fuerte);
-            color: #999;
-            padding: 25px 0;
-            text-align: center;
-            font-size: 1em;
-        }
-        @media (max-width: 900px) {
-            header h1 {
-                font-size: 2.5em;
-            }
-            header p {
-                font-size: 1.4em;
-            }
-            .bloque-kpi {
-                flex-direction: column;
-            }
-            .kpi-texto, .kpi-imagen {
-                flex-basis: 100%;
-            }
-            .kpi-imagen {
-                order: -1;
-                margin-bottom: 20px;
-            }
-            .map-content {
-                height: 450px;
-            }
-            .btn-cta-final {
-                font-size: 1.5em;
-            }
-            .mapa-tab-btn {
-                padding: 10px 15px;
-                font-size: 1em;
-            }
+        .border-corporate-blue {
+            border-color: #0077b6;
         }
     </style>
 </head>
-<body>
 
-    <header>
-        <div class="container">
-            <h1>POLITEIA CMAPS: INTELIGENCIA PARA LA ACCIÓN Y LA DEFENSA DE ACTIVOS</h1>
-            <p>Plataforma de Medición de Riesgo Estructural. No veas el problema, redefine el enfoque.</p>
+<body class="bg-gray-900 text-white font-sans">
+
+    <header class="corporate-blue p-6 shadow-2xl">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-extrabold tracking-widest uppercase">POLITEIA CMAPS</h1>
+            <p class="text-xl font-light italic">El Retorno de la Inteligencia</p>
         </div>
     </header>
 
-    <section class="seccion-rigor">
-        <div class="container">
-            <h2>POLITEIA CMAPS: INTEGRACIÓN DE ACTIVOS Y RIESGO COMPROBABLE</h2>
+    <main class="container mx-auto px-4 py-12">
+        <h2 class="text-4xl font-bold mb-4">REINICIO DE PROYECTO: LANDING PAGE EJECUTIVA</h2>
+        <p class="text-lg text-gray-400 mb-8">Diferenciación de Valor por Nivel de Cliente. **MÉTRICA CLAVE: Score IRSO 0-300**.</p>
 
-            <div class="bloque-kpi">
-                <div class="kpi-texto">
-                    <h3>EL MOTOR DE PREDICCIÓN (SCORE CMAPS 0-300): EL KPI QUE CUANTIFICA LA AMENAZA ESTRUCTURAL.</h3>
-                    <p>Mi base cartográfica (Politeia): El esqueleto del sistema es mi **Cartografía Electoral Unificada**, activa propietario.</p>
-                    <p>Este **KPI fusiona tres factores de riesgo**: **Riesgo Social Manzana (IRSO), Apatía Cívica y Volatilidad Política**.</p>
-                    <p>El Score CMAPS (0-300) es la guía para la acción y la defensa estratégica de activos logísticos y humanos. </p>
+        <div class="bg-gray-800 p-6 rounded-xl shadow-inner">
+            <div class="flex border-b border-gray-700 mb-6">
+                <button id="tab-1" onclick="showTab(1)" class="tab-button px-6 py-3 text-lg font-semibold hover:text-corporate-blue focus:outline-none transition-colors duration-200 border-b-4 border-transparent text-corporate-blue border-corporate-blue">
+                    I. Score 0-300 (Pez Gordo)
+                </button>
+                <button id="tab-2" onclick="showTab(2)" class="tab-button px-6 py-3 text-lg font-semibold hover:text-corporate-blue focus:outline-none transition-colors duration-200 border-b-4 border-transparent">
+                    II. Motor Electoral (Pez Mediano)
+                </button>
+                <button id="tab-3" onclick="showTab(3)" class="tab-button px-6 py-3 text-lg font-semibold hover:text-corporate-blue focus:outline-none transition-colors duration-200 border-b-4 border-transparent">
+                    III. La Manzana (Pez Pequeño)
+                </button>
+            </div>
+
+            <div id="content-1" class="tab-content">
+                <h2 class="text-3xl font-bold mb-4 text-corporate-blue">Mitigación de Riesgo Sistémico: El Retorno de la Inteligencia</h2>
+                <p class="text-xl mb-6">El **Score IRSO 0-300** cuantifica la vulnerabilidad a nivel de manzana. Usando el Demo Electoral como prueba de granularidad, proyectamos dónde invertir para **mitigar la derrota a escala nacional**.</p>
+                <div class="h-[600px] border border-gray-700 rounded-lg overflow-hidden">
+                    <iframe 
+                        id="iframe-1"
+                        src="Elección_presidencial_2024.html" 
+                        class="w-full h-full" 
+                        title="Demo Electoral: Voto por Partido"
+                        sandbox="allow-scripts allow-forms allow-same-origin allow-popups"
+                    ></iframe>
                 </div>
-                <div class="kpi-imagen">
-                    <img src="dial_riesgo_cmaps.png" alt="Dial de Riesgo CMAPS 0-300">
+                <p class="mt-4 text-sm text-gray-500">Demo a Cargar: Elección_presidencial_2024.html (Iztacalco y Nezahualcóyotl).</p>
+            </div>
+
+            <div id="content-2" class="tab-content hidden">
+                <h2 class="text-3xl font-bold mb-4 text-corporate-blue">Optimización Táctica: Mida el GAP y el Ruido Operativo</h2>
+                <p class="text-xl mb-6">El **Demo Delictivo (Incidencia)** ilustra el ruido social. Esto permite **optimizar recursos logísticos y de seguridad**, concentrando la inversión en el **GAP electoral rentable**.</p>
+                <div class="h-[600px] border border-gray-700 rounded-lg overflow-hidden">
+                    <iframe 
+                        id="iframe-2"
+                        src="Incidencia_delictiva_agosto2025.html" 
+                        class="w-full h-full" 
+                        title="Demo Socio-Operativo: Delitos"
+                        sandbox="allow-scripts allow-forms allow-same-origin allow-popups"
+                    ></iframe>
                 </div>
+                <p class="mt-4 text-sm text-gray-500">Demo a Cargar: Incidencia_delictiva_agosto2025.html (Edomex y CDMX).</p>
             </div>
 
-            <div class="bloque-alcance">
-                <h4>COLABORACIÓN ESTRATÉGICA Y ALCANCE NACIONAL</h4>
-                <ul>
-                    <li>**Colaboración Operativa:** Mi sistema está diseñado para integrarse a su estrategia de **seguridad y logística**, ofreciendo la precisión para re-priorizar el riesgo y proteger activos.</li>
-                    <li>**Visión de País:** Esta metodología es **escalable** y ya está probada en **Querétaro, Guanajuato, Tlaxcala, Yucatán, Quintana Roo**, y otros estados, ofreciendo una solución con visión de país.</li>
-                </ul>
-            </div>
-
-        </div>
-    </section>
-
-    <section class="seccion-mapas">
-        <div class="container">
-            <h2>MAPA DE RIESGO OPERACIONAL: ENFOQUE EN EL PROBLEMA CRÍTICO</h2>
-            <p class="map-intro-text">
-                El **color ROJO (Score 200-300)** es la guía para la acción. Indica la **convergencia máxima del Riesgo Social, la inestabilidad Política y el riesgo a la Propiedad**. Ahí es donde se deben **re-priorizar la seguridad y los activos logísticos**.
-            </p>
-
-            <div class="mapa-tabs">
-                <button class="mapa-tab-btn active" data-tab="abstencion">1. RIESGO ESTRUCTURAL (ABSTENCIÓN)</button>
-                <button class="mapa-tab-btn" data-tab="delitos">2. RIESGO OPERACIONAL (DELITO EDOMEX)</button>
-            </div>
-
-            <div id="abstencion" class="map-content active">
-                <iframe src="./Elección_presidencial_2024.html" class="map-iframe" title="Mapa de Abstención Electoral"></iframe>
-            </div>
-
-            <div id="delitos" class="map-content">
-                <iframe src="./Incidencia_delictiva_agosto2025.html" class="map-iframe" title="Mapa de Incidencia Delictiva"></iframe>
+            <div id="content-3" class="tab-content hidden">
+                <h2 class="text-3xl font-bold mb-4 text-corporate-blue">Inteligencia Quirúrgica: El Mapa de Acción para la Base Operativa</h2>
+                <p class="text-xl mb-6">El **Demo Electoral (Voto por Partido)** es su radiografía para identificar el **voto duro propio** y el **GAP más susceptible** en su sección electoral. Herramienta directa para la **micro-operación**.</p>
+                <div class="h-[600px] border border-gray-700 rounded-lg overflow-hidden">
+                    <iframe 
+                        id="iframe-3"
+                        src="Elección_presidencial_2024.html" 
+                        class="w-full h-full" 
+                        title="Demo Electoral: Micro-Operación"
+                        sandbox="allow-scripts allow-forms allow-same-origin allow-popups"
+                    ></iframe>
+                </div>
+                <p class="mt-4 text-sm text-gray-500">Demo a Cargar: Elección_presidencial_2024.html (Voto por Partido).</p>
             </div>
 
         </div>
-    </section>
-
-    <section class="seccion-cta">
-        <div class="container">
-            <h2>EL PRÓXIMO PASO: LA INVITACIÓN A COMPARTIR LA INFORMACIÓN</h2>
-
-            <div class="cta-box">
-                <p>Mi objetivo es la **colaboración estratégica**. Pongo mi experiencia y mi activo Politeia CMAPS al servicio de su visión.</p>
-                <p>Solicitamos una **sesión de 15 minutos** para demostrar la **operación en vivo del sistema (QGIS)** y su capacidad de filtrado del riesgo.</p>
-
-                <a href="mailto:politeiacmaps@gmail.com" class="btn-cta-final">¡SOLICITAR SESIÓN ESTRATÉGICA!</a>
-            </div>
-
-            <div class="contacto-info">
-                <p>
-                    Contacto: **José Antonio Cardeña Medina**.
-                    Tel: <a href="tel:5564646085">5564646085</a>.
-                    Email: <a href="mailto:politeiacmaps@gmail.com">politeiacmaps@gmail.com</a>.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>© 2025 Politeia CMAPS. Todos los derechos reservados.</p>
-        </div>
-    </footer>
+    </main>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const tabs = document.querySelectorAll('.mapa-tab-btn');
-            const contents = document.querySelectorAll('.map-content');
-
-            tabs.forEach(tab => {
-                tab.addEventListener('click', function() {
-                    // Remover 'active' de todas las pestañas y contenidos
-                    tabs.forEach(t => t.classList.remove('active'));
-                    contents.forEach(c => c.classList.remove('active'));
-
-                    // Añadir 'active' a la pestaña clicada
-                    this.classList.add('active');
-
-                    // Mostrar el contenido correspondiente
-                    const targetId = this.dataset.tab;
-                    const targetContent = document.getElementById(targetId);
-                    if (targetContent) {
-                        targetContent.classList.add('active');
-                    }
-                });
+        /**
+         * Función para manejar el cambio de pestañas.
+         * Asegura que solo el contenido y la pestaña activa se muestren.
+         * @param {number} tabNumber - El índice de la pestaña a mostrar (1, 2, o 3).
+         */
+        function showTab(tabNumber) {
+            // Ocultar todos los contenidos y desactivar todas las pestañas
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.add('hidden');
             });
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.classList.remove('text-corporate-blue', 'border-corporate-blue');
+            });
+
+            // Mostrar el contenido y activar la pestaña seleccionada
+            const selectedContent = document.getElementById('content-' + tabNumber);
+            const selectedButton = document.getElementById('tab-' + tabNumber);
+            
+            if (selectedContent) {
+                selectedContent.classList.remove('hidden');
+            }
+            if (selectedButton) {
+                selectedButton.classList.add('text-corporate-blue', 'border-corporate-blue');
+            }
+            
+            // Recargar el iframe para asegurar que el contenido se visualice correctamente (opcional, pero útil)
+            const iframe = document.getElementById('iframe-' + tabNumber);
+            if(iframe && iframe.src) {
+                // Una forma segura de forzar la recarga sin cambiar la URL
+                iframe.contentWindow.location.reload(); 
+            }
+        }
+
+        // Inicializar mostrando la primera pestaña al cargar
+        document.addEventListener('DOMContentLoaded', () => {
+            showTab(1);
         });
     </script>
 </body>
