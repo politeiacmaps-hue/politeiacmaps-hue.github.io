@@ -157,9 +157,7 @@
             color: var(--color-rojo-impacto);
         }
 
-        /* ********************************** */
-        /* SECCIÓN DEL MAPA (LA PRUEBA) - CÓDIGO RESTAURADO Y MEJORADO */
-        /* ********************************** */
+        /* SECCIÓN DEL MAPA (LA PRUEBA) */
         .seccion-mapas {
             background-color: var(--color-fondo-claro);
             padding: 60px 0;
@@ -226,14 +224,15 @@
             height: 650px;
             position: relative;
             overflow: hidden;
-            display: none;
+            /* Aquí está la corrección: por defecto, todos están ocultos. */
+            display: none; 
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
             border-radius: 8px;
             margin-bottom: 40px;
         }
         
         .map-content.active {
-            display: block;
+            display: block; /* Solo el activo se muestra */
         }
         
         .map-iframe {
@@ -243,9 +242,7 @@
             display: block;
         }
 
-        /* ********************************** */
         /* SECCIÓN CTA FINAL */
-        /* ********************************** */
         .seccion-cta {
             background-color: var(--color-naranja-cta); 
             color: white;
@@ -392,7 +389,7 @@
             
             <div class="mapa-tabs">
                 <button class="mapa-tab-btn active" data-tab="abstencion" onclick="changeMap('abstencion')">1. RIESGO ESTRUCTURAL (ABSTENCIÓN)</button>
-                <button class="mapa-tab-btn" data-tab="delitos" onclick="changeMap('delitos')">2. RIESGO OPERACIONAL (DELITO)</button>
+                <button class="mapa-tab-btn" data-tab="delitos" onclick="changeMap('delitos')">2. RIESGO OPERACIONAL (DELITO EDOMEX)</button>
             </div>
             
             <div id="abstencion" class="map-content active">
@@ -437,20 +434,19 @@
             const tabs = document.querySelectorAll('.mapa-tab-btn');
             const contents = document.querySelectorAll('.map-content');
             
-            // Desactivar todos
+            // 1. Desactivar todos los contenidos y pestañas
             tabs.forEach(t => t.classList.remove('active'));
             contents.forEach(c => c.classList.remove('active'));
             
-            // Activar el objetivo
+            // 2. Activar el contenido y la pestaña objetivo
             document.querySelector(`.mapa-tab-btn[data-tab="${targetId}"]`).classList.add('active');
             document.getElementById(targetId).classList.add('active');
         }
 
-        // Inicializar el primer mapa al cargar la página si no hay activo
+        // 3. Inicializar el primer mapa al cargar la página (para asegurar que algo se ve)
         document.addEventListener('DOMContentLoaded', () => {
-            if (!document.querySelector('.map-content.active')) {
-                changeMap('abstencion');
-            }
+            // Se asume que 'abstencion' es el mapa inicial por defecto
+            changeMap('abstencion'); 
         });
     </script>
 </body>
