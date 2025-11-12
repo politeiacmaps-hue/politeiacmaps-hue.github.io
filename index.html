@@ -60,18 +60,8 @@
             margin-top: 15px;
             color: #ccc;
         }
-
-        .logo {
-            /* Usar una imagen de logo si existe, de lo contrario usar el título */
-            /* content: url("logo_fondo_azul.jpg"); */ 
-            max-height: 90px;
-            display: inline-block;
-            margin-bottom: 25px;
-        }
         
-        /* ********************************** */
         /* SECCIÓN CLAVE: SCORE CMAPS y RIGOR */
-        /* ********************************** */
         .seccion-rigor {
             background-color: var(--color-azul-fuerte);
             padding: 60px 0;
@@ -168,7 +158,7 @@
         }
 
         /* ********************************** */
-        /* SECCIÓN DEL MAPA (LA PRUEBA) */
+        /* SECCIÓN DEL MAPA (LA PRUEBA) - CÓDIGO RESTAURADO Y MEJORADO */
         /* ********************************** */
         .seccion-mapas {
             background-color: var(--color-fondo-claro);
@@ -186,7 +176,7 @@
         }
         
         .map-intro-text {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto 30px auto;
             font-size: 1.2em;
             font-weight: 400;
@@ -198,16 +188,57 @@
             font-weight: 700;
         }
         
-        .map-container {
+        /* Contenedor de Tabs */
+        .mapa-tabs {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 3px solid var(--color-azul-fuerte);
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap; 
+        }
+        
+        .mapa-tab-btn {
+            font-family: 'Roboto Condensed', sans-serif;
+            background: none;
+            border: none;
+            padding: 15px 25px;
+            cursor: pointer;
+            font-size: 1.2em;
+            font-weight: 700;
+            color: var(--color-texto-principal);
+            border-bottom: 5px solid transparent;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .mapa-tab-btn:hover {
+            color: var(--color-naranja-cta);
+        }
+
+        .mapa-tab-btn.active {
+            color: var(--color-rojo-impacto);
+            border-bottom-color: var(--color-rojo-impacto);
+        }
+
+        .map-content {
             border: 5px solid var(--color-rojo-impacto);
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            height: 650px;
+            position: relative;
             overflow: hidden;
+            display: none;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+        
+        .map-content.active {
+            display: block;
         }
         
         .map-iframe {
             width: 100%;
-            height: 600px; /* Ajustar altura para mantener la proporción */
+            height: 100%;
             border: none;
             display: block;
         }
@@ -261,7 +292,7 @@
         }
         
         .btn-cta-final:hover {
-            background-color: #004085; /* Azul más oscuro */
+            background-color: #004085; 
         }
         
         .contacto-info {
@@ -302,11 +333,15 @@
                 order: -1; 
                 margin-bottom: 20px;
             }
-            .map-iframe {
-                height: 400px;
+            .map-content {
+                height: 450px;
             }
             .btn-cta-final {
                 font-size: 1.5em;
+            }
+            .mapa-tab-btn {
+                padding: 10px 15px;
+                font-size: 1em;
             }
         }
     </style>
@@ -333,14 +368,14 @@
                 </div>
                 <div class="kpi-imagen">
                     <img src="dial_riesgo_cmaps.png" alt="Dial de Riesgo CMAPS 0-300">
-                                    </div>
+                    
+                </div>
             </div>
             
             <div class="bloque-alcance">
                 <h4>COLABORACIÓN ESTRATÉGICA Y ALCANCE NACIONAL</h4>
                 <ul>
                     <li>**Colaboración Operativa:** Mi sistema está diseñado para integrarse a su estrategia de **seguridad y logística**, ofreciendo la precisión para re-priorizar el riesgo y proteger activos.</li>
-                    <li>**Enfoque Estratégico:** Politeia CMAPS ofrece el sustento objetivo para enfocar la visión de la Libertad donde la gente más lo necesita.</li>
                     <li>**Visión de País:** Esta metodología es **escalable** y ya está probada en **Querétaro, Guanajuato, Tlaxcala, Yucatán, Quintana Roo**, y otros estados, ofreciendo una solución con visión de país.</li>
                 </ul>
             </div>
@@ -350,16 +385,25 @@
 
     <section class="seccion-mapas">
         <div class="container">
-            <h2>MAPA OPERACIONAL: ENFOQUE EN EL PROBLEMA CRÍTICO</h2>
+            <h2>MAPA OPERACIONAL: LA PRUEBA INNEGABLE</h2>
             <p class="map-intro-text">
-                El **color ROJO (Score 200-300)** es la guía para la acción. Indica la **convergencia máxima del Riesgo Social, la inestabilidad Política y el riesgo a la Propiedad**. Ahí es donde se deben **re-priorizar la seguridad y los activos logísticos**.
+                El **color ROJO (Score 200-300)** es la guía para la acción. Indica la **convergencia máxima del Riesgo Social, la inestabilidad Política y el riesgo a la Propiedad**.
             </p>
             
-            <div class="map-container">
-                <iframe src="demo/abstencion2024_demo.html" class="map-iframe" title="Mapa de Abstención Electoral"></iframe>
+            <div class="mapa-tabs">
+                <button class="mapa-tab-btn active" data-tab="abstencion" onclick="changeMap('abstencion')">1. RIESGO ESTRUCTURAL (ABSTENCIÓN)</button>
+                <button class="mapa-tab-btn" data-tab="delitos" onclick="changeMap('delitos')">2. RIESGO OPERACIONAL (DELITO)</button>
+            </div>
+            
+            <div id="abstencion" class="map-content active">
+                <iframe src="abstencion2024_demo.html" class="map-iframe" title="Mapa de Abstención Electoral"></iframe>
             </div>
 
-                    </div>
+            <div id="delitos" class="map-content">
+                <iframe src="Del_Edomex_Jul2025.html" class="map-iframe" title="Mapa de Incidencia Delictiva"></iframe>
+            </div>
+            
+        </div>
     </section>
 
     <section class="seccion-cta">
@@ -367,7 +411,6 @@
             <h2>EL PRÓXIMO PASO: LA INVITACIÓN A COMPARTIR LA INFORMACIÓN</h2>
             
             <div class="cta-box">
-                <p>Mi objetivo es la **colaboración estratégica**. Pongo mi experiencia y mi activo Politeia CMAPS al servicio de su visión.</p>
                 <p>Solicitamos una **sesión de 15 minutos** para demostrar la **operación en vivo del sistema (QGIS)** y su capacidad de filtrado del riesgo.</p>
                 
                 <a href="mailto:politeiacmaps@gmail.com" class="btn-cta-final">¡SOLICITAR SESIÓN ESTRATÉGICA!</a>
@@ -388,5 +431,27 @@
             <p>© 2025 Politeia CMAPS. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <script>
+        function changeMap(targetId) {
+            const tabs = document.querySelectorAll('.mapa-tab-btn');
+            const contents = document.querySelectorAll('.map-content');
+            
+            // Desactivar todos
+            tabs.forEach(t => t.classList.remove('active'));
+            contents.forEach(c => c.classList.remove('active'));
+            
+            // Activar el objetivo
+            document.querySelector(`.mapa-tab-btn[data-tab="${targetId}"]`).classList.add('active');
+            document.getElementById(targetId).classList.add('active');
+        }
+
+        // Inicializar el primer mapa al cargar la página si no hay activo
+        document.addEventListener('DOMContentLoaded', () => {
+            if (!document.querySelector('.map-content.active')) {
+                changeMap('abstencion');
+            }
+        });
+    </script>
 </body>
 </html>
